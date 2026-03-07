@@ -87,7 +87,7 @@ body {
 }
 
 .contact-form-wrapper.open {
-  max-height: 500px;
+  max-height: 700px;
   opacity: 1;
   margin-top: 40px;
 }
