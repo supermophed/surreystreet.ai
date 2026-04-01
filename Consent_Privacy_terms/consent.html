@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS Opt-In · Surreystreet AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --yb-blue: #1a5fa8;
+    --yb-blue-light: #e8f1fb;
+    --yb-blue-mid: #2d7dd2;
+    --ink: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --surface: #f8f9fc;
+    --white: #ffffff;
+    --success: #0f6e56;
+    --success-bg: #e1f5ee;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--surface); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .site-name { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--yb-blue); }
+  .site-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .yb-mark { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+  .yb-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--yb-blue); }
+  .main { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 48px 24px; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 48px; max-width: 560px; width: 100%; box-shadow: 0 2px 24px rgba(26,95,168,0.06); }
+  .program-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--yb-blue-light); color: var(--yb-blue); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+  .program-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yb-blue); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--ink); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .subtitle { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 32px; }
+  .program-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 28px; }
+  .program-box-title { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .program-detail { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+  .program-detail:last-child { margin-bottom: 0; }
+  .pd-label { font-size: 12px; font-weight: 500; color: var(--muted); min-width: 80px; padding-top: 1px; }
+  .pd-value { font-size: 13px; color: var(--ink); line-height: 1.5; }
+  .form-group { margin-bottom: 20px; }
+  label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+  input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--white); outline: none; transition: border-color 0.15s; }
+  input:focus { border-color: var(--yb-blue-mid); box-shadow: 0 0 0 3px rgba(26,95,168,0.08); }
+  .checkbox-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 24px; }
+  input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--yb-blue); cursor: pointer; }
+  .consent-text { font-size: 12px; color: var(--muted); line-height: 1.65; }
+  .consent-text a { color: var(--yb-blue); text-decoration: underline; text-underline-offset: 2px; }
+  .submit-btn { width: 100%; background: var(--yb-blue); color: var(--white); border: none; border-radius: 8px; padding: 14px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.15s, transform 0.1s; letter-spacing: 0.1px; }
+  .submit-btn:hover { background: var(--yb-blue-mid); }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
+  .optout-note { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 14px; background: var(--surface); border-radius: 8px; border: 1px solid var(--border); margin-top: 16px; }
+  .optout-note strong { color: var(--ink); font-weight: 500; }
+  .legal-note { margin-top: 20px; font-size: 11px; color: var(--muted); line-height: 1.6; text-align: center; }
+  .legal-note a { color: var(--yb-blue); text-decoration: none; }
+  .success-state { display: none; text-align: center; padding: 24px 0; }
+  .success-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--success-bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .success-icon svg { width: 24px; height: 24px; }
+  .success-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--ink); margin-bottom: 8px; }
+  .success-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  footer { text-align: center; padding: 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: var(--white); }
+  footer a { color: var(--yb-blue); text-decoration: none; margin: 0 8px; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <div>
+    <div class="site-name">Surreystreet AI</div>
+    <div class="site-sub">Technology partner to Yuki Bird Properties</div>
+  </div>
+  <div class="yb-mark"><div class="yb-dot"></div>Yuki Bird Properties</div>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="program-badge"><div class="program-badge-dot"></div>SMS Notification Program</div>
+    <h1>Stay connected with your property</h1>
+    <p class="subtitle">Opt in to receive SMS notifications from Yuki Bird, your AI-powered property assistant. Get real-time alerts, guest communications, and property updates — right to your phone.</p>
+    <div class="program-box">
+      <div class="program-box-title">About this program</div>
+      <div class="program-detail"><span class="pd-label">Sender</span><span class="pd-value">Yuki Bird Properties, operated by Surreystreet AI</span></div>
+      <div class="program-detail"><span class="pd-label">Message types</span><span class="pd-value">Property alerts, guest access notifications, security events, maintenance updates</span></div>
+      <div class="program-detail"><span class="pd-label">Frequency</span><span class="pd-value">Message frequency varies based on property activity. Typically 2–10 messages per week.</span></div>
+      <div class="program-detail"><span class="pd-label">Charges</span><span class="pd-value">Message and data rates may apply. Contact your carrier for details.</span></div>
+    </div>
+    <div id="form-state">
+      <div class="form-group"><label for="name">Full name</label><input type="text" id="name" placeholder="Your full name" autocomplete="name"></div>
+      <div class="form-group"><label for="phone">Mobile number</label><input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel"></div>
+      <div class="form-group"><label for="email">Email address</label><input type="email" id="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="consent" onchange="toggleBtn()">
+        <label for="consent" class="consent-text" style="font-weight:400">By checking this box, I consent to receive recurring automated SMS notifications from <strong>Yuki Bird Properties</strong>, operated by Surreystreet AI, at the mobile number provided above. I understand that consent is not a condition of any purchase or service. Message and data rates may apply. I have read and agree to the <a href="/terms.html">Terms &amp; Conditions</a> and <a href="/privacy.html">Privacy Policy</a>.</label>
+      </div>
+      <button class="submit-btn" id="submit-btn" disabled onclick="handleSubmit()">Opt in to SMS notifications</button>
+      <div class="optout-note"><strong>To opt out at any time:</strong> Reply <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for assistance. You can also email <a href="mailto:vevina@surreystreet.ai" style="color:var(--yb-blue)">vevina@surreystreet.ai</a>.</div>
+      <div class="legal-note">This program is operated by Surreystreet AI on behalf of Yuki Bird Properties.<br><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms &amp; Conditions</a> · <a href="mailto:vevina@surreystreet.ai">Contact us</a></div>
+    </div>
+    <div class="success-state" id="success-state">
+      <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0f6e56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="success-title">You're opted in</div>
+      <div class="success-sub">You'll receive a confirmation text shortly.<br>Reply STOP at any time to unsubscribe.<br><br>Welcome to Yuki Bird.</div>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Surreystreet AI · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms & Conditions</a> · <a href="/consent.html">SMS Opt-In</a> · <a href="mailto:vevina@surreystreet.ai">vevina@surreystreet.ai</a></footer>
+<script>
+function toggleBtn() { document.getElementById('submit-btn').disabled = !document.getElementById('consent').checked; }
+function handleSubmit() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !phone || !email) { alert('Please fill in all fields before opting in.'); return; }
+  document.getElementById('form-state').style.display = 'none';
+  document.getElementById('success-state').style.display = 'block';
+}
+</script>
+</body>
+</html>
