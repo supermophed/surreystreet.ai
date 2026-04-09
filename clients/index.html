@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients — Surrey Street Partners</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --accent: #58a6ff;
+      --font: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* --- Nav --- */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .nav-brand span {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .menu-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 6px 10px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 16px;
+      border-radius: 4px;
+      line-height: 1;
+    }
+
+    .menu-btn:hover { border-color: var(--text-dim); }
+
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 52px;
+      right: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      z-index: 10;
+    }
+
+    .menu-dropdown.open { display: block; }
+
+    .menu-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .menu-dropdown a:hover {
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* --- Main --- */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+    }
+
+    /* --- Client grid --- */
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .client-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.15s;
+    }
+
+    .client-card:hover {
+      border-color: var(--accent);
+    }
+
+    .client-card .name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .client-card .arrow {
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    .client-card:hover .arrow { color: var(--accent); }
+
+    /* --- Loading / Error --- */
+    .skeleton {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+      height: 68px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .error {
+      color: #f85149;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 16px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 11px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 16px; }
+      .client-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/Lion2_transparent_logo.jpg" alt="Surrey Street">
+      <span>Surrey Street</span>
+    </a>
+    <div style="position: relative;">
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <div class="menu-dropdown" id="menuDropdown">
+        <a href="/cdn-cgi/access/logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Clients</h1>
+    <p class="subtitle">Select a client to view demos</p>
+    <div class="client-grid" id="clientGrid">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 Surrey Street Partners, LLC</footer>
+
+  <script src="/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+    menuBtn.addEventListener('click', function () {
+      menuDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menuBtn.contains(e.target) && !menuDropdown.contains(e.target)) {
+        menuDropdown.classList.remove('open');
+      }
+    });
+
+    // Fetch clients
+    (async function () {
+      const grid = document.getElementById('clientGrid');
+      try {
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const { data, error } = await sb.from('clients').select('*').order('name');
+        if (error) throw error;
+
+        grid.innerHTML = '';
+        if (!data.length) {
+          grid.innerHTML = '<p class="error">No clients found.</p>';
+          return;
+        }
+        data.forEach(function (client) {
+          var a = document.createElement('a');
+          a.className = 'client-card';
+          a.href = '/clients/' + client.slug + '/';
+          a.innerHTML = '<div class="name">' + client.name + '</div><div class="arrow">&rarr;</div>';
+          grid.appendChild(a);
+        });
+      } catch (err) {
+        grid.innerHTML = '<p class="error">Failed to load clients. Check Supabase configuration.</p>';
+        console.error(err);
+      }
+    })();
+  </script>
+
+</body>
+</html>
