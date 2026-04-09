@@ -52,8 +52,8 @@ values
   ),
   (
     'messagepay',
-    'Borrower Portal Redesign',
-    'Redesigned borrower-facing portal with modernized payment management experience',
-    '/demos/messagepay/MessagePay_Borrower_Portal_Redesign1.html',
+    'Borrower Scheduled Payments Demo',
+    'Interactive borrower portal with scheduled payment management and autopay flows',
+    '/demos/messagepay/MessagePay_Borrower_Scheduled_Payments_Demo.html',
     2
   );
