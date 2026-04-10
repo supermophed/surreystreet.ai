@@ -91,6 +91,18 @@
       background: var(--bg);
     }
 
+    /* --- Back link --- */
+    .back-link {
+      display: block;
+      padding: 12px 24px;
+      font-size: 13px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: var(--text); }
+
     /* --- Main --- */
     main {
       flex: 1;
@@ -199,6 +211,8 @@
       </div>
     </div>
   </nav>
+
+  <a href="/" class="back-link">&larr; Home</a>
 
   <main>
     <h1>Clients</h1>
