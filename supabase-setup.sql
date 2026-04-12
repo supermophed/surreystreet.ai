@@ -56,4 +56,11 @@ values
     'Interactive borrower portal with scheduled payment management and autopay flows',
     '/demos/messagepay/MessagePay_Borrower_Scheduled_Payments_Demo.html',
     2
+  ),
+  (
+    'messagepay',
+    'Storyline Demo',
+    'End-to-end product storyline walkthrough for MessagePay',
+    '/demos/messagepay/MessagePay_Storyline_Demo.html',
+    3
   );
