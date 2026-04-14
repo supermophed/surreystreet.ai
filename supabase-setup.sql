@@ -63,4 +63,11 @@ values
     'End-to-end product storyline walkthrough for MessagePay',
     '/demos/messagepay/MessagePay_Storyline_Demo.html',
     3
+  ),
+  (
+    'messagepay',
+    'Admin Dashboard',
+    'Borrower Resolution Layer for credit union ops managers with AI mode, My Queue, and portfolio intelligence',
+    '/demos/messagepay/MessagePay_Admin_Dashboard.html',
+    4
   );
