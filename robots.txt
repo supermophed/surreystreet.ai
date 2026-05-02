@@ -1,0 +1,40 @@
+# Surrey Street Partners — robots.txt
+# https://surreystreet.ai
+
+User-agent: *
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+# AI / LLM crawlers — explicitly allowed for public pages
+User-agent: GPTBot
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+User-agent: CCBot
+Allow: /
+Disallow: /clients/
+Disallow: /demos/
+
+Sitemap: https://surreystreet.ai/sitemap.xml

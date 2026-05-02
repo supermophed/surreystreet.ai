@@ -1,0 +1,45 @@
+# Surrey Street Partners
+
+> Surrey Street Partners is a hands-on consulting firm that builds production technology for companies in commerce, payments, and AI. We embed with engineering teams to ship working software — not decks or recommendations.
+
+## What we do
+
+Surrey Street Partners specializes in:
+
+- **Payments infrastructure**: Authorization optimization, processor integrations, vault architecture, fallback routing, payment method strategy
+- **AI systems**: Production agentic workflows, LLM-powered products, intelligent automation, conversational AI platforms
+- **Communications platforms**: CPaaS architecture on Twilio and RCS, SMS, in-app messaging, multi-channel notification infrastructure
+- **B2B monetization**: Pricing strategy, usage-based billing, packaging design, revenue architecture for technical platforms
+
+## How we work
+
+1. **Discover** — Understand your business, your stack, and the constraint that matters most. No prepackaged methodology.
+2. **Architect** — Design systems that work in production. Every architecture decision maps to a business outcome.
+3. **Build** — Write code, ship prototypes, and stand up infrastructure. Embedded with your team, working in your repos, on your timelines.
+4. **Validate** — Every deliverable is tested against real users and real data. We don't hand off until it works — and you can prove it works.
+
+## Team
+
+- **Vevina McAllister** — Founder & Principal. Former payments and commerce leader. Built production AI systems, CPaaS platforms, and B2B pricing strategies across fintech, e-commerce, and SaaS. [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
+
+## Engagement model
+
+Surrey Street Partners takes on a small number of engagements at a time. We are best suited for companies working on hard problems in commerce, payments, or AI that need senior, embedded operators — not advisors.
+
+## Contact
+
+- Email: vevina@surreystreet.ai
+- Website: https://surreystreet.ai
+- LinkedIn: https://www.linkedin.com/in/vmmcallister/
+
+## Key links
+
+- [Homepage (HTML)](https://surreystreet.ai/)
+- [Homepage (Markdown)](https://surreystreet.ai/index.md)
+- [Privacy Policy](https://surreystreet.ai/privacy.html)
+- [Terms](https://surreystreet.ai/terms.html)
+- [SMS Consent](https://surreystreet.ai/consent.html)
+
+## Legal entity
+
+Surrey Street Partners, LLC
