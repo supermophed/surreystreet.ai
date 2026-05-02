@@ -202,19 +202,47 @@ body {
   padding-top: 60px;
 }
 .hero-left {
-  background: var(--cream);
+  background: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 80px 60px;
+  padding: 60px 40px;
   position: relative;
 }
+.hero-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 80px;
+}
 .hero-logo {
-  max-width: 420px;
-  width: 85%;
+  max-width: 460px;
+  width: 100%;
   height: auto;
-  margin-bottom: 0;
+  margin-bottom: -90px;
+  display: block;
+}
+.hero-wordmark {
+  text-align: left;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  padding-left: 110px;
+  white-space: nowrap;
+}
+.hero-wordmark .ws-bold {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 900;
+  color: var(--dark);
+  display: block;
+}
+.hero-wordmark .ws-light {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  color: var(--dark);
+  display: block;
+  letter-spacing: 0.02em;
+  text-align: center;
 }
 .hero-right {
   display: flex;
@@ -584,7 +612,13 @@ body {
 <!-- ── Hero Split ── -->
 <section class="hero">
   <div class="hero-left">
-    <img src="logo/leopard_face.png" alt="Surrey Street Partners" class="hero-logo">
+    <div class="hero-stack">
+      <img src="logo/Leopard_Scream_CompanyName_Transparent.png" alt="Surrey Street Partners" class="hero-logo">
+      <div class="hero-wordmark">
+        <span class="ws-bold">SURREY STREET</span>
+        <span class="ws-light">Partners</span>
+      </div>
+    </div>
   </div>
   <div class="hero-right">
     <div class="hero-eyebrow">We Build What Others Advise On</div>
