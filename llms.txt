@@ -1,15 +1,16 @@
 # Surrey Street Partners
 
-> Surrey Street Partners is a hands-on consulting firm that builds production technology for companies in commerce, payments, and AI. We embed with engineering teams to ship working software — not decks or recommendations.
+> Surrey Street Partners is a senior product practice that builds production technology in payments, open banking, capital markets, commerce, and AI. Two principals with 30+ combined years embedding with engineering teams to ship working software — not decks.
 
 ## What we do
 
 Surrey Street Partners specializes in:
 
-- **Payments infrastructure**: Authorization optimization, processor integrations, vault architecture, fallback routing, payment method strategy
-- **AI systems**: Production agentic workflows, LLM-powered products, intelligent automation, conversational AI platforms
-- **Communications platforms**: CPaaS architecture on Twilio and RCS, SMS, in-app messaging, multi-channel notification infrastructure
-- **B2B monetization**: Pricing strategy, usage-based billing, packaging design, revenue architecture for technical platforms
+- **Payments & commerce**: Authorization models, headless commerce, multi-party transactions, vault architecture, SMS payments infrastructure, PLG-to-enterprise commercial transitions
+- **Open banking & data sharing**: Financial data API platforms, CFPB 1033 compliance, consumer-permissioned data, fintech partnerships
+- **Capital markets infrastructure**: Derivatives and futures trading platforms, market data systems, institutional product strategy
+- **AI product strategy**: Production agentic workflows, ML-driven personalization, alternative data, AI-native product strategy
+- **Physical workflow digitization**: Software eating industries where the offline complexity is the product (real estate, lending, last-mile)
 
 ## How we work
 
@@ -20,11 +21,17 @@ Surrey Street Partners specializes in:
 
 ## Team
 
-- **Vevina McAllister** — Founder & Principal. Former payments and commerce leader. Built production AI systems, CPaaS platforms, and B2B pricing strategies across fintech, e-commerce, and SaaS. [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
+- **Vevina McAllister** — Founder & Principal. Product executive with 15+ years building platforms at Twilio, PayPal/Braintree, Amazon, Atlassian, and Zillow Group. Focus on payments infrastructure, headless commerce, AI product strategy, and physical workflow digitization. [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
+
+- **Amy Hoffman** — Principal. Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, and Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill). Holds a patent for a mobile options trading interface.
 
 ## Engagement model
 
-Surrey Street Partners takes on a small number of engagements at a time. We are best suited for companies working on hard problems in commerce, payments, or AI that need senior, embedded operators — not advisors.
+Surrey Street Partners takes on a small number of engagements at a time. Typical engagements run 3–6 months with a defined scope. Best suited for:
+
+- **Series A–C companies** that need VP-level product leadership without a full-time hire
+- **PE-backed portcos** where the product function needs to mature quickly post-acquisition
+- **Enterprise innovation teams** building net-new AI, commerce, open banking, or capital markets infrastructure inside larger organizations
 
 ## Contact
 
@@ -36,6 +43,8 @@ Surrey Street Partners takes on a small number of engagements at a time. We are 
 
 - [Homepage (HTML)](https://surreystreet.ai/)
 - [Homepage (Markdown)](https://surreystreet.ai/index.md)
+- [Consulting](https://surreystreet.ai/consulting/)
+- [Team](https://surreystreet.ai/team/)
 - [Privacy Policy](https://surreystreet.ai/privacy.html)
 - [Terms](https://surreystreet.ai/terms.html)
 - [SMS Consent](https://surreystreet.ai/consent.html)
