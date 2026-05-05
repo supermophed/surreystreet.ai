@@ -48,7 +48,7 @@ Product executive with 15+ years building platforms at the intersection of comme
 
 Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill).
 
-[Read full bios](https://surreystreet.ai/team/)
+[LinkedIn](https://www.linkedin.com/in/amyshoffman/) · [Read full bios](https://surreystreet.ai/team/)
 
 ---
 

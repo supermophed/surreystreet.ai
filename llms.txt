@@ -23,7 +23,7 @@ Surrey Street Partners specializes in:
 
 - **Vevina McAllister** — Founder & Principal. Product executive with 15+ years building platforms at Twilio, PayPal/Braintree, Amazon, Atlassian, and Zillow Group. Focus on payments infrastructure, headless commerce, AI product strategy, and physical workflow digitization. [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
 
-- **Amy Hoffman** — Principal. Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, and Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill). Holds a patent for a mobile options trading interface.
+- **Amy Hoffman** — Principal. Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, and Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill). Holds a patent for a mobile options trading interface. [LinkedIn](https://www.linkedin.com/in/amyshoffman/)
 
 ## Engagement model
 

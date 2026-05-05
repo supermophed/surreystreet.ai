@@ -63,6 +63,9 @@
       "name": "Amy Hoffman",
       "jobTitle": "Principal",
       "worksFor": { "@id": "https://surreystreet.ai/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/amyshoffman/"
+      ],
       "description": "Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, and CBOE. FINRA Series 3, 7, 63. Co-author of Fundamentals of the Options Market (McGraw-Hill)."
     },
     {
@@ -475,7 +478,7 @@ body {
   border-bottom: 1px solid var(--dark-20);
 }
 .hww-cell:nth-child(4n) { border-right: none; }
-.hww-cell:nth-child(n+5) { border-bottom: none; }
+.hww-cell:nth-last-child(-n+4) { border-bottom: none; }
 .hww-cell-title {
   font-size: 12px;
   font-weight: 700;
@@ -589,9 +592,9 @@ body {
   .team-col { border-left: none; border-top: 1px solid var(--dark-20); }
   .approach-col, .team-col { padding: 60px 32px; }
   .hww-grid { grid-template-columns: repeat(2, 1fr); }
+  .hww-cell { border-right: 1px solid var(--dark-20); border-bottom: 1px solid var(--dark-20); }
   .hww-cell:nth-child(2n) { border-right: none; }
-  .hww-cell:nth-child(n+5) { border-bottom: 1px solid var(--dark-20); }
-  .hww-cell:nth-child(n+7) { border-bottom: none; }
+  .hww-cell:nth-last-child(-n+2) { border-bottom: none; }
   .how-we-work, .contact-section { padding: 60px 24px; }
   .statement { padding: 60px 24px; }
   .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
@@ -615,7 +618,6 @@ body {
     <a href="/team/">Team</a>
     <a href="#how-we-work">How We Work</a>
     <a href="#contact">Contact</a>
-    <a href="https://www.linkedin.com/in/vmmcallister/" class="linkedin-icon" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     <a href="/clients/">Client Login</a>
   </div>
 </nav>
@@ -664,7 +666,7 @@ body {
         <div class="team-name">Vevina McAllister</div>
         <div class="team-role">Founder &amp; Principal</div>
         <div class="team-desc">15+ years building platforms at the intersection of commerce, payments, and developer infrastructure. Twilio, PayPal/Braintree, Amazon, Atlassian, Zillow Group.</div>
-        <a href="https://www.linkedin.com/in/vmmcallister/" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn &#8599;</a>
+        <a href="/team/" class="team-link">Read bio &rarr;</a>
       </div>
       <div class="team-card">
         <div class="team-name">Amy Hoffman</div>
@@ -727,6 +729,22 @@ body {
     <div class="hww-cell">
       <div class="hww-cell-title">AI Product Strategy</div>
       <div class="hww-cell-text">Production agentic workflows, ML-driven personalization, alternative data, and AI-native product strategy.</div>
+    </div>
+    <div class="hww-cell">
+      <div class="hww-cell-title">Monetization</div>
+      <div class="hww-cell-text">B2B pricing strategy, usage-based billing, packaging design, and revenue architecture for technical platforms.</div>
+    </div>
+    <div class="hww-cell">
+      <div class="hww-cell-title">Developer Platforms</div>
+      <div class="hww-cell-text">Developer experience, SDKs, API design, documentation systems, and PLG-to-enterprise commercial transitions.</div>
+    </div>
+    <div class="hww-cell">
+      <div class="hww-cell-title">Workflow Digitization</div>
+      <div class="hww-cell-text">Software eating offline industries — real estate, lending, last-mile operations — where the operational complexity is the product.</div>
+    </div>
+    <div class="hww-cell">
+      <div class="hww-cell-title">Communications</div>
+      <div class="hww-cell-text">CPaaS architecture on Twilio and RCS. SMS, in-app messaging, and multi-channel notification infrastructure.</div>
     </div>
   </div>
 </section>
