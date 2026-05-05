@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulting — Surrey Street Partners</title>
+<meta name="description" content="Surrey Street Partners is the independent practice of Vina McAllister — fractional and interim VP of Product engagements in payments, commerce, AI, and physical workflow digitization.">
+<meta property="og:title" content="Consulting — Surrey Street Partners">
+<meta property="og:description" content="Fractional and interim VP of Product engagements in payments, commerce, AI, and physical workflow digitization.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://surreystreet.ai/consulting/">
+<meta property="og:image" content="https://surreystreet.ai/logo/leopard_face.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="canonical" href="https://surreystreet.ai/consulting/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --dark: #0D244D;
+  --dark-75: rgba(13, 36, 77, 0.75);
+  --dark-50: rgba(13, 36, 77, 0.5);
+  --dark-20: rgba(13, 36, 77, 0.12);
+  --accent: #2D5A3D;
+  --accent-light: #3A7A50;
+  --cream: #F5F2ED;
+  --white: #ffffff;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+/* ── Nav ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--dark-20);
+}
+.nav-wordmark {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark-75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--dark); }
+.nav-links .linkedin-icon { display: inline-flex; align-items: center; }
+.nav-links .linkedin-icon svg {
+  width: 16px; height: 16px;
+  fill: var(--dark-75);
+  transition: fill 0.2s;
+}
+.nav-links .linkedin-icon:hover svg { fill: var(--dark); }
+
+/* ── Back link ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark-75);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: gap 0.2s, color 0.2s;
+}
+.back-link:hover { color: var(--dark); gap: 10px; }
+
+/* ── Page Header ── */
+.page-header {
+  padding: 140px 48px 60px;
+  border-bottom: 1px solid var(--dark-20);
+}
+.page-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.page-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark-50);
+  margin-bottom: 14px;
+}
+.page-headline {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+.page-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dark-75);
+  max-width: 720px;
+}
+.page-intro strong { color: var(--dark); font-weight: 600; }
+
+/* ── Generic Section ── */
+.section {
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--dark-20);
+}
+.section.alt { background: var(--cream); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark-50);
+  margin-bottom: 8px;
+}
+.section-headline {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+}
+.section-lead {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--dark-75);
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+/* ── Numbered list grid ── */
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--dark-20);
+  border-left: 1px solid var(--dark-20);
+}
+.point {
+  padding: 32px 28px;
+  border-right: 1px solid var(--dark-20);
+  border-bottom: 1px solid var(--dark-20);
+  background: var(--white);
+}
+.point-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.point-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+.point-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--dark-75);
+}
+
+/* ── Engagement block ── */
+.engage-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dark-75);
+  max-width: 760px;
+}
+.engage-text p { margin-bottom: 16px; }
+.engage-text p:last-child { margin-bottom: 0; }
+
+/* ── CTA ── */
+.cta {
+  padding: 100px 48px;
+  background: var(--dark);
+  color: var(--white);
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+}
+.cta-headline {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  color: var(--white);
+}
+.cta-button {
+  display: inline-block;
+  background: var(--white);
+  color: var(--dark);
+  padding: 16px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-button:hover { background: var(--accent); color: var(--white); }
+
+/* ── Footer ── */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  font-size: 12px;
+  color: var(--dark-50);
+  background: var(--white);
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  color: var(--dark-50);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--dark); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .site-nav { padding: 16px 24px; }
+  .page-header { padding: 120px 24px 48px; }
+  .section { padding: 60px 24px; }
+  .points { grid-template-columns: 1fr; }
+  .point { border-right: none; }
+  .cta { padding: 70px 24px; }
+  .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav">
+  <a href="/" class="nav-wordmark">Surrey Street Partners</a>
+  <div class="nav-links">
+    <a href="/consulting/" class="active">Consulting</a>
+    <a href="/team/">Team</a>
+    <a href="/#how-we-work">How We Work</a>
+    <a href="/#contact">Contact</a>
+    <a href="https://www.linkedin.com/in/vmmcallister/" class="linkedin-icon" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="/clients/">Client Login</a>
+  </div>
+</nav>
+
+<!-- ── Page Header ── -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <a href="/" class="back-link">&larr; Home</a>
+    <div class="page-eyebrow">Consulting</div>
+    <h1 class="page-headline">"I help companies build and ship product when the problem is hard and the stakes are real."</h1>
+    <p class="page-intro">Surrey Street Partners is the independent practice of <strong>Vina McAllister</strong> &mdash; a product executive with 15+ years building platforms at Twilio, PayPal, Amazon, Atlassian, and Zillow Group. Engages as fractional or interim VP of Product, embedded deeply rather than advising from the outside.</p>
+  </div>
+</section>
+
+<!-- ── What I work on ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">What I Work On</div>
+    <h2 class="section-headline">THREE FOCUS AREAS</h2>
+    <div class="points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <div class="point-title">Payments &amp; commerce infrastructure</div>
+        <p class="point-text">Authorization models, billing architecture, multi-party transaction flows, PLG-to-enterprise commercial transitions. Built the headless commerce platform strategy at Twilio and led payment optimization at PayPal.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <div class="point-title">Physical workflow digitization</div>
+        <p class="point-text">Software eating industries where the offline complexity is the product. Real estate transactions, lending workflows, last-mile operations. Ran product at dotloop post-Zillow acquisition.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <div class="point-title">AI-native product strategy</div>
+        <p class="point-text">Defining what AI actually changes about your product. Not adding a chatbot, but rethinking the workflow, the data model, and the commercial structure underneath it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Who I work with ── -->
+<section class="section alt">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who I Work With</div>
+    <h2 class="section-headline">THREE BUYER<br>PROFILES</h2>
+    <div class="points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <div class="point-title">Series A&ndash;C companies</div>
+        <p class="point-text">Companies that need VP-level product leadership without a full-time hire.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <div class="point-title">PE-backed portcos</div>
+        <p class="point-text">Where the product function needs to mature quickly post-acquisition.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <div class="point-title">Enterprise innovation teams</div>
+        <p class="point-text">Building net-new AI or commerce infrastructure products inside larger organizations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How I engage ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">How I Engage</div>
+    <h2 class="section-headline">DEEP, NOT WIDE.</h2>
+    <div class="engage-text">
+      <p>I take on one or two clients at a time and go deep. This is not a retainer-for-advice arrangement.</p>
+      <p>Typical engagements run 3&ndash;6 months with a defined scope. Straightforward about fit and honest when I'm not the right person for the problem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── What you get ── -->
+<section class="section alt">
+  <div class="section-inner">
+    <div class="section-eyebrow">What You Get</div>
+    <h2 class="section-headline">A BUILDER,<br>NOT A DECK.</h2>
+    <div class="points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <div class="point-title">Shipped at scale</div>
+        <p class="point-text">A product executive who has shipped at scale &mdash; Prime Now at Amazon, payment infrastructure at PayPal, developer platforms at Twilio.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <div class="point-title">Builder's mentality</div>
+        <p class="point-text">Not a consultant's. I write specs, run discovery, and make decisions alongside your team.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <div class="point-title">Honest assessment</div>
+        <p class="point-text">Of what's working and what isn't, without the diplomatic softening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Get in touch</div>
+    <p class="cta-headline">If you're working on a hard problem in payments, commerce, AI infrastructure, or physical workflow digitization &mdash; and you need a senior product partner, not a deck &mdash; I'd like to hear about it.</p>
+    <a href="mailto:vina@surreystreet.ai" class="cta-button">vina@surreystreet.ai</a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/team/">Team</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="https://www.linkedin.com/in/vmmcallister/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="/clients/">Client Login</a>
+  </div>
+  <span>&copy; 2026 Surrey Street Partners, LLC</span>
+  <span>vina@surreystreet.ai</span>
+</footer>
+
+</body>
+</html>
