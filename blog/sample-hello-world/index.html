@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── Per-post SEO (from frontmatter) ── -->
+<title>Sample Post — Delete Me After Reviewing the Pipeline — Surrey Street Partners</title>
+<meta name="description" content="A throwaway post that exists only to demonstrate the publishing pipeline end to end. Delete this file once you&#x27;ve confirmed the layout, OG tags, and RSS look right.">
+<meta name="author" content="Surrey Street Partners">
+<link rel="canonical" href="https://surreystreet.ai/blog/sample-hello-world/">
+
+<!-- ── Open Graph (load-bearing for LinkedIn unfurl) ── -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Surrey Street Partners">
+<meta property="og:title" content="Sample Post — Delete Me After Reviewing the Pipeline">
+<meta property="og:description" content="A throwaway post that exists only to demonstrate the publishing pipeline end to end. Delete this file once you&#x27;ve confirmed the layout, OG tags, and RSS look right.">
+<meta property="og:url" content="https://surreystreet.ai/blog/sample-hello-world/">
+<meta property="og:image" content="https://surreystreet.ai/logo/leopard_face.png">
+<meta property="og:image:alt" content="Surrey Street Partners">
+<meta property="article:published_time" content="2026-06-29">
+<meta property="article:author" content="Surrey Street Partners">
+
+<!-- ── Twitter / X card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample Post — Delete Me After Reviewing the Pipeline">
+<meta name="twitter:description" content="A throwaway post that exists only to demonstrate the publishing pipeline end to end. Delete this file once you&#x27;ve confirmed the layout, OG tags, and RSS look right.">
+<meta name="twitter:image" content="https://surreystreet.ai/logo/leopard_face.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Surrey Street Partners — Insights" href="/blog/rss.xml">
+
+<!-- ── Structured data ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sample Post \u2014 Delete Me After Reviewing the Pipeline",
+  "description": "A throwaway post that exists only to demonstrate the publishing pipeline end to end. Delete this file once you've confirmed the layout, OG tags, and RSS look right.",
+  "image": "https://surreystreet.ai/logo/leopard_face.png",
+  "datePublished": "2026-06-29",
+  "dateModified": "2026-06-29",
+  "url": "https://surreystreet.ai/blog/sample-hello-world/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://surreystreet.ai/blog/sample-hello-world/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Surrey Street Partners"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Surrey Street Partners",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surreystreet.ai/logo/leopard_face.png"
+    }
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --dark: #0D244D;
+  --dark-75: rgba(13, 36, 77, 0.75);
+  --dark-50: rgba(13, 36, 77, 0.5);
+  --dark-20: rgba(13, 36, 77, 0.12);
+  --accent: #2D5A3D;
+  --accent-light: #3A7A50;
+  --cream: #F5F2ED;
+  --white: #ffffff;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+/* ── Nav (matches site) ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--dark-20);
+}
+.nav-wordmark {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--dark); text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--dark-75);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a.active { color: var(--dark); }
+
+/* ── Article ── */
+.article-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+.article-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--dark-75);
+  text-decoration: none; margin-bottom: 36px; transition: gap 0.2s, color 0.2s;
+}
+.article-back:hover { color: var(--dark); gap: 10px; }
+.article-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--dark-50); margin-bottom: 16px;
+}
+.article-title {
+  font-size: clamp(32px, 5vw, 50px); font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.02em; color: var(--dark); margin-bottom: 20px;
+}
+.article-meta {
+  font-size: 13px; color: var(--dark-50); margin-bottom: 40px;
+  padding-bottom: 28px; border-bottom: 1px solid var(--dark-20);
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+}
+.article-meta .dot { color: var(--dark-20); }
+
+/* ── Body typography ── */
+.article-body { font-size: 17px; line-height: 1.75; color: var(--dark); }
+.article-body > * + * { margin-top: 1.4em; }
+.article-body h2 {
+  font-size: clamp(24px, 3vw, 30px); font-weight: 800; line-height: 1.2;
+  letter-spacing: -0.01em; margin-top: 2em; margin-bottom: -0.4em;
+}
+.article-body h3 {
+  font-size: clamp(19px, 2.4vw, 22px); font-weight: 700; line-height: 1.3;
+  margin-top: 1.6em; margin-bottom: -0.5em;
+}
+.article-body h4 { font-size: 17px; font-weight: 700; margin-top: 1.4em; margin-bottom: -0.6em; }
+.article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: var(--accent-light); }
+.article-body strong { font-weight: 700; }
+.article-body ul, .article-body ol { padding-left: 1.4em; }
+.article-body li { margin-top: 0.5em; }
+.article-body li > ul, .article-body li > ol { margin-top: 0.5em; }
+.article-body blockquote {
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 20px;
+  color: var(--dark-75); font-style: italic;
+}
+.article-body img { max-width: 100%; height: auto; display: block; }
+.article-body hr { border: none; border-top: 1px solid var(--dark-20); margin: 2.4em 0; }
+.article-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em; background: var(--cream); padding: 2px 6px; border-radius: 3px;
+}
+.article-body pre {
+  background: var(--dark); color: var(--cream); padding: 20px 22px;
+  border-radius: 6px; overflow-x: auto; font-size: 14px; line-height: 1.6;
+}
+.article-body pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.article-body th, .article-body td { border: 1px solid var(--dark-20); padding: 8px 12px; text-align: left; }
+.article-body th { background: var(--cream); font-weight: 700; }
+
+/* ── Post footer / CTA ── */
+.article-cta {
+  margin-top: 64px; padding: 36px 40px; background: var(--cream);
+  text-align: center;
+}
+.article-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.article-cta p { font-size: 14px; color: var(--dark-75); margin-bottom: 20px; }
+.article-cta a {
+  display: inline-block; background: var(--dark); color: var(--white);
+  padding: 13px 30px; font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s;
+}
+.article-cta a:hover { background: var(--accent); }
+
+/* ── Footer (matches site) ── */
+.site-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 48px; border-top: 1px solid var(--dark-20);
+  font-size: 12px; color: var(--dark-50); flex-wrap: wrap; gap: 12px;
+}
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { color: var(--dark-50); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--dark); }
+
+@media (max-width: 700px) {
+  .site-nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .article-wrap { padding: 120px 20px 60px; }
+  .site-footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav">
+  <a href="/" class="nav-wordmark">Surrey Street Partners</a>
+  <div class="nav-links">
+    <a href="/consulting/">Consulting</a>
+    <a href="/team/">Team</a>
+    <a href="/blog/" class="active">Insights</a>
+    <a href="/#contact">Contact</a>
+    <a href="/clients/">Client Login</a>
+  </div>
+</nav>
+
+<!-- ── Article ── -->
+<article class="article-wrap">
+  <a href="/blog/" class="article-back">&larr; All insights</a>
+  <div class="article-eyebrow">Pipeline Test</div>
+  <h1 class="article-title">Sample Post — Delete Me After Reviewing the Pipeline</h1>
+  <div class="article-meta">
+    <span>Surrey Street Partners</span>
+    <span class="dot">&#10022;</span>
+    <time datetime="2026-06-29">June 29, 2026</time>
+    <span class="dot">&#10022;</span>
+    <span>1 min read</span>
+  </div>
+
+  <div class="article-body">
+<p>This page is <strong>not real content</strong>. It's here to prove the build works: drop a markdown file into <code>content/blog/</code>, run the builder, and a fully-formed, SEO-ready post appears at <code>/blog/&lt;slug&gt;/</code>.</p>
+<h2>What this demonstrates</h2>
+<p>The builder renders the elements a real post will use:</p>
+<ul><li>Section headings (<code>##</code> and <code>###</code>)</li><li><strong>Bold</strong> and <em>italic</em> text</li><li><a href="https://surreystreet.ai" target="_blank" rel="noopener noreferrer">Links back to the canonical site</a></li><li><code>Inline code</code> and lists</li></ul>
+<h3>A sub-heading</h3>
+<blockquote><p>Pull-quotes render with the brand accent rule, so a strong line from the post can be set apart.</p></blockquote>
+<p>When you're done eyeballing this, delete <code>content/blog/sample-hello-world.md</code> and re-run <code>python3 build_blog.py</code> — the post and its folder disappear from the listing, RSS, and sitemap.</p>
+  </div>
+
+  <div class="article-cta">
+    <h3>Working on a hard problem in payments, open banking, or AI?</h3>
+    <p>We embed with engineering teams and ship production systems — not decks.</p>
+    <a href="/#contact">Get in touch</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="/consulting/">Consulting</a>
+    <a href="/team/">Team</a>
+    <a href="/blog/">Insights</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="https://www.linkedin.com/in/vmmcallister/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="/clients/">Client Login</a>
+  </div>
+  <span>&copy; 2026 Surrey Street Partners, LLC</span>
+  <span>vevina@surreystreet.ai</span>
+</footer>
+
+</body>
+</html>

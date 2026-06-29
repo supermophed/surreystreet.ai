@@ -492,6 +492,41 @@ body {
   color: var(--dark-75);
 }
 
+/* ── Clients Strip ── */
+.clients-strip {
+  padding: 60px 48px;
+  border-bottom: 1px solid var(--dark-20);
+  text-align: center;
+}
+.clients-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark-50);
+  margin-bottom: 32px;
+}
+.clients-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+.client-logo {
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.client-logo:hover { opacity: 1; }
+.client-logo--horizontal { max-height: 60px; }
+.client-logo--stacked { max-height: 100px; }
+@media (max-width: 600px) {
+  .clients-logos { gap: 40px; }
+  .client-logo--horizontal { max-height: 44px; }
+  .client-logo--stacked { max-height: 76px; }
+}
+
 /* ── Contact ── */
 .contact-section {
   padding: 80px 48px;
@@ -746,6 +781,15 @@ body {
       <div class="hww-cell-title">Communications</div>
       <div class="hww-cell-text">CPaaS architecture on Twilio and RCS. SMS, in-app messaging, and multi-channel notification infrastructure.</div>
     </div>
+  </div>
+</section>
+
+<!-- ── Recent Engagements ── -->
+<section class="clients-strip">
+  <div class="clients-eyebrow">Recent Engagements</div>
+  <div class="clients-logos">
+    <img src="messagepay_logo_0D244D.png" alt="MessagePay" class="client-logo client-logo--horizontal">
+    <img src="yukibird_logo_0D244D.jpg" alt="YukiBird" class="client-logo client-logo--stacked">
   </div>
 </section>
 

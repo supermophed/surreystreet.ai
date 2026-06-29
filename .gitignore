@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Claude Code session state
+.claude/
+
+# Local environment / secrets
+.env
+.env.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts / caches
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/

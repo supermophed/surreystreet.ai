@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Surrey Street Partners — Insights</title>
+    <link>https://surreystreet.ai/blog/</link>
+    <atom:link href="https://surreystreet.ai/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Field notes on payments, open banking, capital markets, commerce, and AI infrastructure.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jun 2026 17:06:09 +0000</lastBuildDate>
+    <item>
+      <title>Sample Post — Delete Me After Reviewing the Pipeline</title>
+      <link>https://surreystreet.ai/blog/sample-hello-world/</link>
+      <guid isPermaLink="true">https://surreystreet.ai/blog/sample-hello-world/</guid>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A throwaway post that exists only to demonstrate the publishing pipeline end to end. Delete this file once you&#x27;ve confirmed the layout, OG tags, and RSS look right.</description>
+      <content:encoded><![CDATA[<p>This page is <strong>not real content</strong>. It's here to prove the build works: drop a markdown file into <code>content/blog/</code>, run the builder, and a fully-formed, SEO-ready post appears at <code>/blog/&lt;slug&gt;/</code>.</p>
+<h2>What this demonstrates</h2>
+<p>The builder renders the elements a real post will use:</p>
+<ul><li>Section headings (<code>##</code> and <code>###</code>)</li><li><strong>Bold</strong> and <em>italic</em> text</li><li><a href="https://surreystreet.ai" target="_blank" rel="noopener noreferrer">Links back to the canonical site</a></li><li><code>Inline code</code> and lists</li></ul>
+<h3>A sub-heading</h3>
+<blockquote><p>Pull-quotes render with the brand accent rule, so a strong line from the post can be set apart.</p></blockquote>
+<p>When you're done eyeballing this, delete <code>content/blog/sample-hello-world.md</code> and re-run <code>python3 build_blog.py</code> — the post and its folder disappear from the listing, RSS, and sitemap.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
