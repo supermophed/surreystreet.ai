@@ -1,0 +1,11 @@
+# Publishing metadata for billing-is-not-a-standalone-app.md
+# (Prose lives in the .md and can be re-synced from Cowork freely;
+#  these fields persist. Inline frontmatter in the .md, if present, wins.)
+title: "The Platform Playbook: Billing Is a Component, Not a Company"
+description: "Billing was never a standalone company — it's one organ in the B2B commerce platform. Why Stripe, Salesforce, and Adyen are absorbing it, and what it means if you're buying."
+slug: billing-is-not-a-standalone-app
+date: 2026-06-29
+author: Vevina McAllister
+eyebrow: Platform Strategy
+og_image: /logo/leopard_face.png
+og_image_alt: "Surrey Street Partners — The Platform Playbook"

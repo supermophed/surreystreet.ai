@@ -71,6 +71,38 @@ body { font-family: var(--font); color: var(--dark); line-height: 1.6; backgroun
 
 .empty-state { padding: 40px 0; color: var(--dark-50); font-size: 15px; border-top: 1px solid var(--dark-20); }
 
+/* ── Subscribe band ── */
+.subscribe-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+.subscribe-band {
+  padding: 42px 40px; background: var(--dark); color: var(--white);
+  text-align: center; border-radius: 8px;
+}
+.subscribe-band .eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px;
+}
+.subscribe-band h3 { font-size: 24px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.subscribe-band p.lead { font-size: 14px; color: rgba(255,255,255,0.75); max-width: 460px; margin: 0 auto 22px; }
+.subscribe-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+.subscribe-form input {
+  flex: 1; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08); color: var(--white);
+  font-family: var(--font); font-size: 14px;
+}
+.subscribe-form input::placeholder { color: rgba(255,255,255,0.5); }
+.subscribe-form button {
+  background: var(--white); color: var(--dark); border: none;
+  padding: 12px 24px; font-weight: 700; font-size: 13px; cursor: pointer;
+  font-family: var(--font); transition: background 0.2s;
+}
+.subscribe-form button:hover { background: var(--cream); }
+.subscribe-band iframe { display: block; margin: 0 auto; }
+.subscribe-band--embed { padding: 26px; }
+.subscribe-embed { max-width: 480px; margin: 0 auto; }
+.subscribe-note { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 14px; }
+.subscribe-note code { background: rgba(255,255,255,0.12); padding: 1px 5px; border-radius: 3px; }
+@media (max-width: 520px) { .subscribe-form { flex-direction: column; } }
+
 .site-footer {
   display: flex; align-items: center; justify-content: space-between;
   padding: 24px 48px; border-top: 1px solid var(--dark-20);
@@ -111,6 +143,10 @@ body { font-family: var(--font); color: var(--dark); line-height: 1.6; backgroun
 <main class="post-list">
 {{POST_ITEMS}}
 </main>
+
+<div class="subscribe-wrap">
+  {{SUBSCRIBE}}
+</div>
 
 <footer class="site-footer">
   <div class="footer-links">

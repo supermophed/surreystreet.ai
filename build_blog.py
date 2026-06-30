@@ -42,11 +42,17 @@ OUT_BLOG_DIR      = os.path.join(ROOT, "blog")
 TEMPLATE_POST     = os.path.join(ROOT, "templates", "post.html")
 TEMPLATE_INDEX    = os.path.join(ROOT, "templates", "blog-index.html")
 SITEMAP_PATH      = os.path.join(ROOT, "sitemap.xml")
+OUT_TEASER_DIR    = os.path.join(ROOT, "teasers")   # copy-paste promo blurbs (not linked from the site)
 
 DEFAULT_AUTHOR    = "Surrey Street Partners"
 DEFAULT_OG_IMAGE  = "/logo/leopard_face.png"
 DEFAULT_EYEBROW   = "Insights"
 ORG_NAME          = "Surrey Street Partners"
+
+# beehiiv subscribe form (v3 embed). This is the `data-beehiiv-form` value from
+# Subscribers → Subscribe forms → Get embed code. Until it's set, the band
+# renders a styled, non-functional placeholder so you can see the layout.
+BEEHIIV_FORM_ID   = "358a45c0-b037-4d97-9539-76a43f858308"
 
 # Core (non-blog) URLs to keep in the sitemap, with change frequency + priority.
 CORE_URLS = [
@@ -63,23 +69,11 @@ CORE_URLS = [
 
 
 # ── Frontmatter ─────────────────────────────────────────────────────────────
-def parse_frontmatter(text):
-    """Split a markdown file into (frontmatter dict, body). Supports a small
-    YAML subset: `key: value`, optional quotes, and inline `[a, b]` lists."""
-    if not text.startswith("---"):
-        return {}, text
-    parts = text.split("\n", 1)
-    rest = parts[1] if len(parts) > 1 else ""
-    end = rest.find("\n---")
-    if end == -1:
-        return {}, text
-    fm_block = rest[:end]
-    body = rest[end + 4:]              # skip the "\n---"
-    if body.startswith("\n"):
-        body = body[1:]
-
+def _parse_kv(block):
+    """Parse a block of `key: value` lines (a small YAML subset: optional
+    quotes, inline `[a, b]` lists). Used for both frontmatter and sidecars."""
     meta = {}
-    for line in fm_block.splitlines():
+    for line in block.splitlines():
         line = line.rstrip()
         if not line.strip() or line.strip().startswith("#"):
             continue
@@ -96,7 +90,46 @@ def parse_frontmatter(text):
                (val.startswith("'") and val.endswith("'")):
                 val = val[1:-1]
             meta[key] = val
-    return meta, body
+    return meta
+
+
+def parse_frontmatter(text):
+    """Split a markdown file into (frontmatter dict, body). Frontmatter is the
+    block between leading `---` fences; absent that, returns ({}, text)."""
+    if not text.startswith("---"):
+        return {}, text
+    parts = text.split("\n", 1)
+    rest = parts[1] if len(parts) > 1 else ""
+    end = rest.find("\n---")
+    if end == -1:
+        return {}, text
+    fm_block = rest[:end]
+    body = rest[end + 4:]              # skip the "\n---"
+    if body.startswith("\n"):
+        body = body[1:]
+    return _parse_kv(fm_block), body
+
+
+def strip_leading_comment(body):
+    """Remove a single leading HTML comment block (e.g. 'Editor notes: delete
+    before publish') so drafts straight from Cowork never leak notes on-page."""
+    return re.sub(r"^\s*<!--.*?-->\s*", "", body, count=1, flags=re.S)
+
+
+def extract_h1(body):
+    """If the first non-blank line is a `# Heading`, lift it out as the document
+    title and strip it from the body (so it isn't rendered twice). Returns
+    (title_or_None, body)."""
+    lines = body.split("\n")
+    for idx, line in enumerate(lines):
+        if line.strip() == "":
+            continue
+        m = re.match(r"^#\s+(.*?)\s*#*\s*$", line)
+        if m:
+            del lines[idx]
+            return m.group(1).strip(), "\n".join(lines)
+        break  # first real line isn't an H1 — nothing to lift
+    return None, body
 
 
 # ── Inline markdown ─────────────────────────────────────────────────────────
@@ -312,14 +345,32 @@ def load_posts():
         with open(path, encoding="utf-8") as f:
             raw = f.read()
         meta, body = parse_frontmatter(raw)
+        base = os.path.splitext(fn)[0]
+
+        # Sidecar metadata: <slug>.meta holds publishing fields I own, so the
+        # prose .md can be re-synced from Cowork without losing them. Inline
+        # frontmatter (if any) overrides the sidecar.
+        sidecar = os.path.join(CONTENT_DIR, base + ".meta")
+        if os.path.exists(sidecar):
+            with open(sidecar, encoding="utf-8") as sf:
+                merged = _parse_kv(sf.read())
+            merged.update(meta)
+            meta = merged
+
+        # Clean a raw Cowork draft: drop a leading editor-notes comment, lift the
+        # leading "# H1" out as the title.
+        body = strip_leading_comment(body)
+        h1, body = extract_h1(body)
+
         if str(meta.get("draft", "")).lower() in ("true", "1", "yes"):
             continue
-        title = meta.get("title")
+        title = meta.get("title") or h1
         desc = meta.get("description", "")
         if not title:
-            print("  ! skipping %s — missing 'title' in frontmatter" % fn)
+            print("  ! skipping %s — no title (add frontmatter, a %s.meta sidecar, "
+                  "or a leading '# H1')" % (fn, base))
             continue
-        slug = meta.get("slug") or os.path.splitext(fn)[0]
+        slug = meta.get("slug") or base
         date = meta.get("date") or datetime.date.today().isoformat()
         posts.append({
             "file": fn,
@@ -370,6 +421,36 @@ def fill(template, mapping):
     return out
 
 
+def subscribe_band():
+    """The branded newsletter band. When BEEHIIV_FORM_ID is set, the beehiiv
+    form supplies its own title + subtitle, so we render just the navy frame
+    around it (no duplicate heading). Until then, an on-brand placeholder with
+    full chrome shows the intended layout."""
+    if BEEHIIV_FORM_ID:
+        return (
+            '<section class="subscribe-band subscribe-band--embed" '
+            'aria-label="Subscribe to the newsletter">\n'
+            '    <div class="subscribe-embed">'
+            '<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" '
+            'data-beehiiv-form="%s"></script></div>\n'
+            '  </section>' % BEEHIIV_FORM_ID
+        )
+    return (
+        '<section class="subscribe-band" aria-label="Subscribe to the newsletter">\n'
+        '    <div class="eyebrow">The Newsletter</div>\n'
+        '    <h3>Get these in your inbox</h3>\n'
+        '    <p class="lead">Occasional field notes on payments, open banking, '
+        'capital markets, and AI infrastructure. No noise.</p>\n'
+        '    <form class="subscribe-form" onsubmit="return false">\n'
+        '      <input type="email" placeholder="you@company.com" aria-label="Email address">\n'
+        '      <button type="submit">Subscribe</button>\n'
+        '    </form>\n'
+        '    <p class="subscribe-note">Placeholder — set '
+        '<code>BEEHIIV_FORM_ID</code> in build_blog.py to wire this to beehiiv.</p>\n'
+        '  </section>'
+    )
+
+
 def render_posts(posts, template):
     for p in posts:
         mapping = {
@@ -385,6 +466,7 @@ def render_posts(posts, template):
             "EYEBROW": html.escape(p["eyebrow"], quote=True),
             "BODY_HTML": p["body_html"],
             "JSONLD": jsonld(p),
+            "SUBSCRIBE": subscribe_band(),
         }
         page = fill(template, mapping)
         out_dir = os.path.join(OUT_BLOG_DIR, p["slug"])
@@ -419,6 +501,7 @@ def render_index(posts, template):
     else:
         post_items = '  <div class="empty-state">No posts yet — first insight coming soon.</div>'
     page = template.replace("{{POST_ITEMS}}", post_items)
+    page = page.replace("{{SUBSCRIBE}}", subscribe_band())
     os.makedirs(OUT_BLOG_DIR, exist_ok=True)
     with open(os.path.join(OUT_BLOG_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(page)
@@ -492,6 +575,75 @@ def render_sitemap(posts):
     print("  + /sitemap.xml  (%d urls)" % len(urls))
 
 
+# ── Teasers (for LinkedIn / lead-gen) ───────────────────────────────────────
+def _plain_text(md):
+    """Strip markdown formatting to plain prose for an excerpt."""
+    t = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", md)     # images -> alt
+    t = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", t)        # links  -> text
+    t = re.sub(r"`([^`]+)`", r"\1", t)                    # code
+    t = re.sub(r"\*\*([^*]+)\*\*", r"\1", t)
+    t = re.sub(r"__([^_]+)__", r"\1", t)
+    t = re.sub(r"\*([^*]+)\*", r"\1", t)
+    t = re.sub(r"(?<!\w)_([^_]+)_(?!\w)", r"\1", t)
+    return t.strip()
+
+
+def _first_paragraph(body_md):
+    """The lede — first real paragraph, skipping headings/lists/quotes/code."""
+    for block in re.split(r"\n\s*\n", body_md.strip()):
+        b = block.strip()
+        if not b:
+            continue
+        if (b.startswith("#") or b.startswith(">") or b.startswith("```")
+                or b.startswith("<") or re.match(r"^\s*[-*+]\s", b)
+                or re.match(r"^\s*\d+\.\s", b)):
+            continue
+        return " ".join(line.strip() for line in b.splitlines())
+    return ""
+
+
+def with_utm(url, source, slug, medium="social"):
+    sep = "&" if "?" in url else "?"
+    return "%s%sutm_source=%s&utm_medium=%s&utm_campaign=%s" % (url, sep, source, medium, slug)
+
+
+def render_teasers(posts):
+    """Emit a copy-paste promo blurb per post for LinkedIn / lead-gen, with
+    UTM-tagged links so source tracking survives referrer stripping. These are
+    working files (not linked from the site); rebuilding overwrites them."""
+    os.makedirs(OUT_TEASER_DIR, exist_ok=True)
+    for p in posts:
+        slug, url = p["slug"], p["canonical"]
+        lede = _plain_text(_first_paragraph(p["body_md"]))
+        cta = "Read the full piece → %s" % with_utm(url, "linkedin", slug)
+        out = [
+            "# Teaser — %s" % p["title"],
+            "# Auto-generated by build_blog.py. Edit before posting; rebuilding overwrites this file.",
+            "",
+            "=== READY TO PASTE (LinkedIn / social) ===",
+            p["title"],
+            "",
+            lede,
+            "",
+            cta,
+            "",
+            "=== UTM SHARE LINKS (pick by destination) ===",
+            "LinkedIn:   %s" % with_utm(url, "linkedin", slug),
+            "X/Twitter:  %s" % with_utm(url, "twitter", slug),
+            "Newsletter: %s" % with_utm(url, "newsletter", slug, "email"),
+            "Generic:    %s" % with_utm(url, "referral", slug),
+            "",
+            "=== COMPONENTS ===",
+            "Headline:  %s" % p["title"],
+            "One-liner: %s" % p["description"],
+            "Hook:      %s" % lede,
+            "",
+        ]
+        with open(os.path.join(OUT_TEASER_DIR, slug + ".md"), "w", encoding="utf-8") as f:
+            f.write("\n".join(out))
+        print("  + teasers/%s.md" % slug)
+
+
 # ── OG / SEO validation ─────────────────────────────────────────────────────
 REQUIRED_TAGS = [
     ('<link rel="canonical"', "canonical link"),
@@ -560,6 +712,12 @@ def main():
     render_index(posts, tpl_index)
     render_rss(posts)
     render_sitemap(posts)
+    render_teasers(posts)
+
+    if not BEEHIIV_FORM_ID:
+        print("\n  note: BEEHIIV_FORM_ID is unset — subscribe band shows a "
+              "placeholder.\n        Set it in build_blog.py before publishing "
+              "(see BLOG_PUBLISHING.md).")
 
     if "--check" in sys.argv:
         ok = run_checks(posts)

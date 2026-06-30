@@ -48,11 +48,11 @@ Generated files are produced from markdown + templates. Never edit anything unde
    ```
    python3 build_blog.py --check
    ```
-   This regenerates the post, the `/blog` index, `rss.xml`, and `sitemap.xml`,
-   then verifies every post has a title, meta description, self-referencing
-   canonical, complete Open Graph + Twitter tags, and that the `og:image`
-   actually resolves to a file on disk. It exits non-zero if anything is missing
-   — so a bad unfurl can't slip through.
+   This regenerates the post, the `/blog` index, `rss.xml`, `sitemap.xml`, and the
+   `teasers/<slug>.md` promo blurb, then verifies every post has a title, meta
+   description, self-referencing canonical, complete Open Graph + Twitter tags,
+   and that the `og:image` actually resolves to a file on disk. It exits non-zero
+   if anything is missing — so a bad unfurl can't slip through.
 
 3. **Preview locally.** Serve the repo root and open the post:
    ```
@@ -66,9 +66,29 @@ Generated files are produced from markdown + templates. Never edit anything unde
    go-ahead** (see Boundaries). The deploy is just static files; no build command
    needed on Cloudflare's side.
 
-5. **Send via beehiiv** (see below).
+5. **Send via beehiiv** — **full post** in the email with a link back to the
+   canonical site (see "Email model" below). Either compose from your saved
+   template or let RSS automation draft it.
 
-6. **Post to LinkedIn** linking to `https://surreystreet.ai/blog/<slug>/`.
+6. **Post to LinkedIn / lead-gen** using `teasers/<slug>.md` (ready-to-paste blurb
+   + UTM links).
+
+### Email model: FULL post in beehiiv (decided)
+The beehiiv email carries the **full** article with a link back to
+`surreystreet.ai/blog/<slug>/`. Because beehiiv can't set a `rel=canonical`, a
+full-text web copy on `*.beehiiv.com` would compete with the site in search — so
+**turn OFF beehiiv's site-wide "Discoverable on the web"** (Settings → Website/SEO)
+to keep the hosted copy out of Google. The email still sends normally; the site
+stays the only indexed copy. Since the RSS feed carries full content
+(`<content:encoded>`), beehiiv **RSS automation** can auto-draft the full email
+from `https://surreystreet.ai/blog/rss.xml` — optional, removes double-entry.
+
+### Teasers for LinkedIn / lead-gen
+Every build writes `teasers/<slug>.md`: a ready-to-paste headline + lede hook +
+"read the full piece" CTA, plus **UTM-tagged share links** (LinkedIn / X /
+newsletter / generic) so source tracking survives referrer stripping. Edit before
+posting; rebuilding overwrites it. These files are working copies, not linked from
+the site.
 
 ---
 
@@ -103,32 +123,19 @@ Sources:
 - https://www.beehiiv.com/support/article/14493017506583-options-on-the-web-page-of-the-post-flow
 - https://www.beehiiv.com/support/article/37100791400727-seo-settings-for-your-website
 
-So to keep surreystreet.ai as the single indexed copy, pick **one** of these
-(the builder supports either — no code change needed):
+**DECISION (made):** the email is the **full post** with a link back to the site,
+so we use **Option A** — keep the beehiiv web copy out of search.
 
-### Option A — Keep the beehiiv web version out of search (recommended if email = full post)
-Use beehiiv purely as the send channel and turn **OFF** the publication's
-site-wide **"Discoverable on the web"** toggle
-(beehiiv → Settings → Website/Publication → SEO → "Discoverable on the web").
+### Option A — Keep the beehiiv web version out of search ✅ (in use)
+Turn **OFF** the publication's site-wide **"Discoverable on the web"** toggle
+(beehiiv → Settings → Website/SEO → "Discoverable on the web").
 The email still sends; subscribers can still open the hosted web version via their
-emailed link; but Google won't index a competing full-text copy. surreystreet.ai
-stays the only indexed home.
-*Trade-off:* the toggle is all-or-nothing for the whole beehiiv site, so only use
-this if you don't need beehiiv's web pages indexed for anything else.
+emailed link; but Google won't index a competing full-text copy, so
+surreystreet.ai stays the only indexed home.
+*Trade-off:* the toggle is all-or-nothing for the whole beehiiv site — fine here,
+since the Surrey Street publication exists only to send.
 
-### Option B — Make the beehiiv email a teaser (recommended if you want beehiiv web pages discoverable)
-The email contains a summary + "read the full piece on surreystreet.ai" link. The
-only *full* copy that exists (and gets indexed) is the canonical site, so there's
-no duplicate-content competition even if beehiiv's web version is discoverable.
-This is the **teaser email model** — one of the two models you left open. The
-build already produces both a short `<description>` and full `<content:encoded>`
-in `rss.xml`, so either model works downstream.
-
-> You still haven't chosen teaser-vs-full, and you asked me not to choose it.
-> Note only that **Option A pairs with a full-post email; Option B pairs with a
-> teaser.** Decide that one and the beehiiv path is settled.
-
-### beehiiv fields to set on every post (either option)
+### beehiiv fields to set on every post
 In the post's **Web** tab → **SEO Settings**:
 - **Slug:** match the site slug if you like, but it doesn't need to.
 - **Meta title:** the post `title`.
@@ -140,6 +147,31 @@ In the post's **Web** tab → **SEO Settings**:
 prepare exact values to paste, but I won't log in or connect it.
 
 ---
+
+## Subscribe form (wired)
+
+A navy "newsletter" band renders at the end of every post and on `/blog`. It
+loads the live beehiiv form, which supplies its own title + subtitle + field +
+button, so our band is just the frame around it (no duplicate heading).
+
+**beehiiv account structure:** one login, two publications — Yuki Bird and
+**Surrey Street** (`surreystreetai.beehiiv.com`). The subscribe form must be
+created *inside the Surrey Street publication* or sign-ups land in the wrong list.
+
+**How it's wired:** `BEEHIIV_FORM_ID` in `build_blog.py` holds the v3 form's
+`data-beehiiv-form` id. The band emits beehiiv's v3 script embed
+(`subscribe-forms.beehiiv.com/v3/loader.js`). To swap the form, change that id and
+re-run `python3 build_blog.py`. (If the id is ever blank, the band falls back to a
+styled, non-functional placeholder.)
+
+**Editing the form copy:** title/subtitle live in the beehiiv form builder and
+update the live form with no rebuild needed.
+
+**Known styling ceiling:** on the current beehiiv plan/tier, the form's font
+(serif) and button color (black) aren't customizable, so the form isn't a
+pixel-perfect match to the site's Inter. The clean fix, if wanted later: a small
+Cloudflare Pages Function that posts to beehiiv's API behind our own Inter-styled
+form. **Connecting/authenticating beehiiv stays yours.**
 
 ## (Optional, later) Syndication — stop double-entry
 
