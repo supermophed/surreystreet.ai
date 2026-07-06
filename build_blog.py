@@ -386,10 +386,30 @@ def load_posts():
             "body_md": body,
             "body_html": markdown_to_html(body),
             "reading_time": reading_time(body),
+            "tags": _norm_tags(meta.get("tags")),
+            "updated": meta.get("updated") or date,
         })
     # newest first
     posts.sort(key=lambda p: p["date"], reverse=True)
     return posts
+
+
+def _norm_tags(v):
+    if not v:
+        return []
+    if isinstance(v, list):
+        return [t.strip() for t in v if str(t).strip()]
+    return [t.strip() for t in str(v).split(",") if t.strip()]
+
+
+def tag_meta(post):
+    """keywords + article:tag meta — only emitted when the post declares tags."""
+    tags = post.get("tags") or []
+    if not tags:
+        return ""
+    lines = ['<meta name="keywords" content="%s">' % html.escape(", ".join(tags), quote=True)]
+    lines += ['<meta property="article:tag" content="%s">' % html.escape(t, quote=True) for t in tags]
+    return "\n".join(lines)
 
 
 def jsonld(post):
@@ -403,13 +423,15 @@ def jsonld(post):
         "dateModified": post["date"],
         "url": post["canonical"],
         "mainEntityOfPage": {"@type": "WebPage", "@id": post["canonical"]},
-        "author": {"@type": "Organization", "name": post["author"]},
+        "author": {"@type": "Person", "name": post["author"], "url": SITE_URL},
         "publisher": {
             "@type": "Organization",
             "name": ORG_NAME,
             "logo": {"@type": "ImageObject", "url": abs_url("/logo/leopard_face.png")},
         },
     }
+    if post.get("tags"):
+        data["keywords"] = ", ".join(post["tags"])
     return json.dumps(data, indent=2)
 
 
@@ -461,7 +483,9 @@ def render_posts(posts, template):
             "OG_IMAGE": p["og_image"],
             "OG_IMAGE_ALT": html.escape(p["og_image_alt"], quote=True),
             "PUB_DATE_ISO": p["date"],
+            "MOD_DATE_ISO": p.get("updated", p["date"]),
             "PUB_DATE_HUMAN": human_date(p["date"]),
+            "TAG_META": tag_meta(p),
             "READING_TIME": p["reading_time"],
             "EYEBROW": html.escape(p["eyebrow"], quote=True),
             "BODY_HTML": p["body_html"],
