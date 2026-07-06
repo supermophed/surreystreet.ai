@@ -1,54 +1,14 @@
 # Surrey Street Partners
 
-> Surrey Street Partners is a senior product practice that builds production technology in payments, open banking, capital markets, commerce, and AI. Two principals with 30+ combined years embedding with engineering teams to ship working software — not decks.
+> Product and AI consulting practice focused on payments, commerce, and financial infrastructure. Founded by Vevina McAllister, with Principal Amy Hoffman covering open banking and capital markets.
 
-## What we do
+## Pages
 
-Surrey Street Partners specializes in:
+- [Home](https://surreystreet.ai/): Surrey Street Partners overview and practice areas
+- [Consulting](https://surreystreet.ai/consulting/): Engagement model, what we work on, who we work with
+- [Team](https://surreystreet.ai/team/): Principal bios — Vevina McAllister and Amy Hoffman
+- [Insights](https://surreystreet.ai/blog/): Industry analysis on payments, AI product strategy, and fintech
 
-- **Payments & commerce**: Authorization models, headless commerce, multi-party transactions, vault architecture, SMS payments infrastructure, PLG-to-enterprise commercial transitions
-- **Open banking & data sharing**: Financial data API platforms, CFPB 1033 compliance, consumer-permissioned data, fintech partnerships
-- **Capital markets infrastructure**: Derivatives and futures trading platforms, market data systems, institutional product strategy
-- **AI product strategy**: Production agentic workflows, ML-driven personalization, alternative data, AI-native product strategy
-- **Physical workflow digitization**: Software eating industries where the offline complexity is the product (real estate, lending, last-mile)
+## Optional
 
-## How we work
-
-1. **Discover** — Understand your business, your stack, and the constraint that matters most. No prepackaged methodology.
-2. **Architect** — Design systems that work in production. Every architecture decision maps to a business outcome.
-3. **Build** — Write code, ship prototypes, and stand up infrastructure. Embedded with your team, working in your repos, on your timelines.
-4. **Validate** — Every deliverable is tested against real users and real data. We don't hand off until it works — and you can prove it works.
-
-## Team
-
-- **Vevina McAllister** — Founder & Principal. Product executive with 15+ years building platforms at Twilio, PayPal/Braintree, Amazon, Atlassian, and Zillow Group. Focus on payments infrastructure, headless commerce, AI product strategy, and physical workflow digitization. [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
-
-- **Amy Hoffman** — Principal. Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, and Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill). Holds a patent for a mobile options trading interface. [LinkedIn](https://www.linkedin.com/in/amyshoffman/)
-
-## Engagement model
-
-Surrey Street Partners takes on a small number of engagements at a time. Typical engagements run 3–6 months with a defined scope. Best suited for:
-
-- **Series A–C companies** that need VP-level product leadership without a full-time hire
-- **PE-backed portcos** where the product function needs to mature quickly post-acquisition
-- **Enterprise innovation teams** building net-new AI, commerce, open banking, or capital markets infrastructure inside larger organizations
-
-## Contact
-
-- Email: vevina@surreystreet.ai
-- Website: https://surreystreet.ai
-- LinkedIn: https://www.linkedin.com/in/vmmcallister/
-
-## Key links
-
-- [Homepage (HTML)](https://surreystreet.ai/)
-- [Homepage (Markdown)](https://surreystreet.ai/index.md)
-- [Consulting](https://surreystreet.ai/consulting/)
-- [Team](https://surreystreet.ai/team/)
-- [Privacy Policy](https://surreystreet.ai/privacy.html)
-- [Terms](https://surreystreet.ai/terms.html)
-- [SMS Consent](https://surreystreet.ai/consent.html)
-
-## Legal entity
-
-Surrey Street Partners, LLC
+- [Client Portal](https://surreystreet.ai/clients/): Gated client area — requires authentication
