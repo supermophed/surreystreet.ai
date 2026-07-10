@@ -6,12 +6,12 @@
     <atom:link href="https://surreystreet.ai/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Field notes on payments, open banking, capital markets, commerce, and AI infrastructure.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2026 14:17:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 14:37:25 +0000</lastBuildDate>
     <item>
       <title>Innovation in Your GTM Stack Isn&#x27;t Free</title>
       <link>https://surreystreet.ai/blog/gtm-stack-isnt-free/</link>
       <guid isPermaLink="true">https://surreystreet.ai/blog/gtm-stack-isnt-free/</guid>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
       <description>A field report from a GTM demo night: the tools are dazzling and nearly free — but the durable value still lives in the data and the system of record. Adopt with discipline.</description>
       <content:encoded><![CDATA[<p>Every so often I get consumed on a topic and decide to join a series of meet ups or demo days to see what's happening with start ups in the space. Ever since <a href="/blog/billing-is-not-a-standalone-app/">my post on billing</a> and thinking about how transformations need to evolve in the age of AI (more on that later), I've been thinking a lot about the GTM stack, who's playing and where it's going. So, I went to a demo day for the GTM stack last night. Seven startups, a room full of founders, and honestly — the energy was electric. They weren't wrong when they said San Francisco is back! Alive!</p>
 <p>One of the presenters opened on a line I keep hearing: the GTM stack is hopelessly fragmented. She's right — it is. But the tool she was showing to fix it was, itself, one more tool for the stack. Wha - Wha. And I don't mean that as a knock. Fragmentation is the point.</p>
