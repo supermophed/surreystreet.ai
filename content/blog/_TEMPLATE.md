@@ -5,7 +5,8 @@ slug: your-post-title-here
 date: 2026-06-29
 author: Surrey Street Partners
 eyebrow: Payments
-og_image: /logo/leopard_face.png
+hero: /blog/your-post-title-here/hero.jpg   # optional: shows on-page AND becomes the OG unfurl card. ~1200px wide JPEG, co-locate in the post's folder. Omit for no hero.
+og_image: /logo/leopard_face.png            # only needed if you want a DIFFERENT unfurl image than the hero; otherwise delete this and the hero is used
 og_image_alt: Surrey Street Partners
 draft: true
 ---

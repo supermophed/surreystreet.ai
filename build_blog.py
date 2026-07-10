@@ -379,7 +379,8 @@ def load_posts():
             "slug": slug,
             "date": date,
             "author": meta.get("author", DEFAULT_AUTHOR),
-            "og_image": abs_url(meta.get("og_image", DEFAULT_OG_IMAGE)),
+            "hero": meta.get("hero", ""),
+            "og_image": abs_url(meta.get("og_image") or meta.get("hero") or DEFAULT_OG_IMAGE),
             "og_image_alt": meta.get("og_image_alt", title),
             "eyebrow": meta.get("eyebrow", DEFAULT_EYEBROW),
             "canonical": "%s/blog/%s/" % (SITE_URL, slug),
@@ -473,6 +474,16 @@ def subscribe_band():
     )
 
 
+def hero_html(post):
+    """Optional on-page hero image at the top of a post — rendered only when the
+    post's .meta sets `hero` (a root-relative image path). Also becomes the OG
+    card unless the post sets an explicit og_image."""
+    if not post.get("hero"):
+        return ""
+    alt = html.escape(post.get("og_image_alt") or post["title"], quote=True)
+    return '<img class="article-hero" src="%s" alt="%s">' % (post["hero"], alt)
+
+
 def render_posts(posts, template):
     for p in posts:
         mapping = {
@@ -488,6 +499,7 @@ def render_posts(posts, template):
             "TAG_META": tag_meta(p),
             "READING_TIME": p["reading_time"],
             "EYEBROW": html.escape(p["eyebrow"], quote=True),
+            "HERO": hero_html(p),
             "BODY_HTML": p["body_html"],
             "JSONLD": jsonld(p),
             "SUBSCRIBE": subscribe_band(),

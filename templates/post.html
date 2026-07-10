@@ -113,6 +113,12 @@ body {
 }
 .article-meta .dot { color: var(--dark-20); }
 
+/* ── Hero image (optional, per-post) ── */
+.article-hero {
+  display: block; width: 100%; height: auto;
+  border-radius: 8px; margin: 0 0 44px;
+}
+
 /* ── Body typography ── */
 .article-body { font-size: 17px; line-height: 1.75; color: var(--dark); }
 .article-body > * + * { margin-top: 1.4em; }
@@ -243,6 +249,8 @@ body {
     <span class="dot">&#10022;</span>
     <span>{{READING_TIME}}</span>
   </div>
+
+  {{HERO}}
 
   <div class="article-body">
 {{BODY_HTML}}
