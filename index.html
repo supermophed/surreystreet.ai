@@ -606,6 +606,7 @@ body {
 }
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 .footer-links a {
@@ -615,6 +616,25 @@ body {
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--dark); }
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 4px;
+  padding-left: 20px;
+  border-left: 1px solid var(--dark-20);
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+}
+.footer-social svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--dark-50);
+  transition: fill 0.2s;
+}
+.footer-social a:hover svg { fill: var(--dark); }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
@@ -830,8 +850,18 @@ body {
     <a href="/blog/">Insights</a>
     <a href="/privacy.html">Privacy</a>
     <a href="/terms.html">Terms</a>
-    <a href="https://www.linkedin.com/in/vmmcallister/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="/clients/">Client Login</a>
+    <span class="footer-social">
+      <a href="https://www.linkedin.com/company/surrey-street-partners/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+      </a>
+      <a href="https://x.com/surreystreetai" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/surreystreet.ai" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.203 3.61c2.71 2.033 5.626 6.155 6.697 8.368 1.07-2.213 3.986-6.335 6.696-8.369C20.55 2.144 23.61 1.012 23.61 4.503c0 .697-.4 5.856-.634 6.694-.815 2.911-3.787 3.653-6.43 3.203 4.62.786 5.797 3.39 3.258 5.996-4.822 4.948-6.93-1.242-7.47-2.828-.099-.29-.145-.427-.146-.31-.001-.117-.047.02-.146.31-.54 1.586-2.647 7.776-7.47 2.828-2.539-2.605-1.361-5.21 3.258-5.996-2.643.45-5.615-.292-6.43-3.203C.209 10.36-.19 5.2-.19 4.503c0-3.491 3.06-2.359 4.014-.893l1.379 0z"/></svg>
+      </a>
+    </span>
   </div>
   <span>&copy; 2026 Surrey Street Partners, LLC</span>
   <span>vevina@surreystreet.ai</span>
