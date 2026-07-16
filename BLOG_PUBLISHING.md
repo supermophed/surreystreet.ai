@@ -184,6 +184,29 @@ whenever you want to turn it on.
 
 ---
 
+## Analytics (Cloudflare Web Analytics)
+
+Analytics = **Cloudflare Web Analytics** (free, cookieless). The beacon is
+**manually installed** before `</body>` in every page and in both blog templates
+(so future posts inherit it) — because Cloudflare's *automatic* edge-injection
+didn't fire on this GitHub-Pages-behind-Cloudflare setup. Dashboard setting:
+**"Enable with JS Snippet installation."**
+
+**What it shows:** totals (visits, page views, top paths, countries, devices) +
+a **Referrers** report. **What it does NOT do:** track **UTM parameters** — it
+doesn't log query strings. So the `utm_source=...` tags on social links are
+ignored here; channel attribution comes only from the `Referer` header, and
+LinkedIn's app / X / email clients often **strip it → traffic lands in "Direct."**
+
+**Gotcha:** ad-blockers / privacy extensions block `cloudflareinsights`, so your
+*own* visits often don't register (dashboard looks empty/null). **Test in
+Incognito** or on a phone over cellular — real un-blocked visitors are counted.
+
+**To actually read UTMs later** (only if the referrer gaps bug you): GA4 (free,
+but Google/cookies), or self-hosted **Umami / Plausible CE** (free + privacy-first,
+on the VPS), or paid **Plausible/Fathom** (~$9/mo). Decided for now: wait and see
+with Cloudflare before adding a second tool.
+
 ## Boundaries (won't do without your explicit go-ahead)
 
 - **Publishing live / pushing to production** — staged and shown to you first.
