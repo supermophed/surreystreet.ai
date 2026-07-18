@@ -55,13 +55,14 @@ ORG_NAME          = "Surrey Street Partners"
 BEEHIIV_FORM_ID   = "358a45c0-b037-4d97-9539-76a43f858308"
 
 # Core (non-blog) URLs to keep in the sitemap, with change frequency + priority.
+# NOTE: /index.md and /llms.txt intentionally NOT in sitemap — they're LLM/agent
+# discovery files, not search-indexable pages. Keeping them in sitemap creates
+# false "not indexed" signals in Google Search Console.
 CORE_URLS = [
     ("/",              "monthly", "1.0"),
     ("/consulting/",   "monthly", "0.8"),
     ("/team/",         "monthly", "0.8"),
     ("/blog/",         "weekly",  "0.9"),
-    ("/index.md",      "monthly", "0.6"),
-    ("/llms.txt",      "monthly", "0.6"),
     ("/privacy.html",  "yearly",  "0.4"),
     ("/terms.html",    "yearly",  "0.4"),
     ("/consent.html",  "yearly",  "0.3"),
