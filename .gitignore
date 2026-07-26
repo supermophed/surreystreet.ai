@@ -4,9 +4,15 @@
 # Claude Code session state
 .claude/
 
-# Local environment / secrets
+# Local environment / secrets (defense-in-depth — this is a PUBLIC repo)
 .env
-.env.local
+.env.*
+*.key
+*.pem
+credentials.json
+credentials*.json
+service-account*.json
+secrets.*
 
 # Editor / IDE
 .vscode/
@@ -19,3 +25,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 node_modules/
+
+# Backups / dumps / logs
+*.bak
+*.log
+*.sql.dump
