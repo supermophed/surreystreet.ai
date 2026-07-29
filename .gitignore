@@ -30,3 +30,9 @@ node_modules/
 *.bak
 *.log
 *.sql.dump
+
+# Editorial working docs — never commit; the repo root is the public web root
+editorial/
+
+# Blog hero source art stays local — only the optimized .jpg ships
+blog/*/*.png
