@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── Per-post SEO (from frontmatter) ── -->
+<title>Your Agent Has Your Password. Who Has Your Refund? — Surrey Street Partners</title>
+<meta name="description" content="Enormous engineering has gone into proving you authorized your AI agent. Almost none into deciding who pays when it gets it wrong.">
+<meta name="author" content="Vevina McAllister">
+<link rel="canonical" href="https://surreystreet.ai/blog/agent-password-refund/">
+
+<!-- ── Open Graph (load-bearing for LinkedIn unfurl) ── -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Surrey Street Partners">
+<meta property="og:title" content="Your Agent Has Your Password. Who Has Your Refund?">
+<meta property="og:description" content="Enormous engineering has gone into proving you authorized your AI agent. Almost none into deciding who pays when it gets it wrong.">
+<meta property="og:url" content="https://surreystreet.ai/blog/agent-password-refund/">
+<meta property="og:image" content="https://surreystreet.ai/blog/agent-password-refund/hibernia.jpg">
+<meta property="og:image:alt" content="A 1930s-style bank robbery outside the Hibernia Bank — masked figures, a cash bag, bystanders with hands raised">
+<meta property="article:published_time" content="2026-07-27">
+<meta property="article:modified_time" content="2026-07-27">
+<meta property="article:author" content="Vevina McAllister">
+<meta name="keywords" content="agentic AI, payments, Regulation E, consumer protection, open banking, fintech, AI liability">
+<meta property="article:tag" content="agentic AI">
+<meta property="article:tag" content="payments">
+<meta property="article:tag" content="Regulation E">
+<meta property="article:tag" content="consumer protection">
+<meta property="article:tag" content="open banking">
+<meta property="article:tag" content="fintech">
+<meta property="article:tag" content="AI liability">
+
+<!-- ── Twitter / X card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Agent Has Your Password. Who Has Your Refund?">
+<meta name="twitter:description" content="Enormous engineering has gone into proving you authorized your AI agent. Almost none into deciding who pays when it gets it wrong.">
+<meta name="twitter:image" content="https://surreystreet.ai/blog/agent-password-refund/hibernia.jpg">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Surrey Street Partners — Insights" href="/blog/rss.xml">
+
+<!-- ── Structured data ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Your Agent Has Your Password. Who Has Your Refund?",
+  "description": "Enormous engineering has gone into proving you authorized your AI agent. Almost none into deciding who pays when it gets it wrong.",
+  "image": "https://surreystreet.ai/blog/agent-password-refund/hibernia.jpg",
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-07-27",
+  "url": "https://surreystreet.ai/blog/agent-password-refund/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://surreystreet.ai/blog/agent-password-refund/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Vevina McAllister",
+    "url": "https://surreystreet.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Surrey Street Partners",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surreystreet.ai/logo/leopard_face.png"
+    }
+  },
+  "keywords": "agentic AI, payments, Regulation E, consumer protection, open banking, fintech, AI liability"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --dark: #0D244D;
+  --dark-75: rgba(13, 36, 77, 0.75);
+  --dark-50: rgba(13, 36, 77, 0.5);
+  --dark-20: rgba(13, 36, 77, 0.12);
+  --accent: #2D5A3D;
+  --accent-light: #3A7A50;
+  --cream: #F5F2ED;
+  --white: #ffffff;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+/* ── Nav (matches site) ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--dark-20);
+}
+.nav-wordmark {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--dark); text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--dark-75);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a.active { color: var(--dark); }
+
+/* ── Article ── */
+.article-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+.article-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--dark-75);
+  text-decoration: none; margin-bottom: 36px; transition: gap 0.2s, color 0.2s;
+}
+.article-back:hover { color: var(--dark); gap: 10px; }
+.article-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--dark-50); margin-bottom: 16px;
+}
+.article-title {
+  font-size: clamp(32px, 5vw, 50px); font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.02em; color: var(--dark); margin-bottom: 20px;
+}
+.article-subtitle {
+  font-size: clamp(17px, 2.2vw, 21px); font-weight: 400; line-height: 1.5;
+  color: var(--dark-75); margin: -6px 0 24px; max-width: 640px;
+}
+.article-meta {
+  font-size: 13px; color: var(--dark-50); margin-bottom: 40px;
+  padding-bottom: 28px; border-bottom: 1px solid var(--dark-20);
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+}
+.article-meta .dot { color: var(--dark-20); }
+
+/* ── Hero image (optional, per-post) ── */
+.article-hero {
+  display: block; width: 100%; height: auto;
+  border-radius: 8px; margin: 0 0 44px;
+}
+
+/* ── Body typography ── */
+.article-body { font-size: 17px; line-height: 1.75; color: var(--dark); }
+.article-body > * + * { margin-top: 1.4em; }
+.article-body h2 {
+  font-size: clamp(24px, 3vw, 30px); font-weight: 800; line-height: 1.2;
+  letter-spacing: -0.01em; margin-top: 2em; margin-bottom: -0.4em;
+}
+.article-body h3 {
+  font-size: clamp(19px, 2.4vw, 22px); font-weight: 700; line-height: 1.3;
+  margin-top: 1.6em; margin-bottom: -0.5em;
+}
+.article-body h4 { font-size: 17px; font-weight: 700; margin-top: 1.4em; margin-bottom: -0.6em; }
+.article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: var(--accent-light); }
+.article-body strong { font-weight: 700; }
+.article-body ul, .article-body ol { padding-left: 1.4em; }
+.article-body li { margin-top: 0.5em; }
+.article-body li > ul, .article-body li > ol { margin-top: 0.5em; }
+.article-body blockquote {
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 20px;
+  color: var(--dark-75); font-style: italic;
+}
+.article-body img { max-width: 100%; height: auto; display: block; }
+.article-body hr { border: none; border-top: 1px solid var(--dark-20); margin: 2.4em 0; }
+.article-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em; background: var(--cream); padding: 2px 6px; border-radius: 3px;
+}
+.article-body pre {
+  background: var(--dark); color: var(--cream); padding: 20px 22px;
+  border-radius: 6px; overflow-x: auto; font-size: 14px; line-height: 1.6;
+}
+.article-body pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.article-body th, .article-body td { border: 1px solid var(--dark-20); padding: 8px 12px; text-align: left; }
+.article-body th { background: var(--cream); font-weight: 700; }
+
+/* ── Subscribe band ── */
+.subscribe-band {
+  margin-top: 56px; padding: 38px 40px; background: var(--dark);
+  color: var(--white); text-align: center; border-radius: 8px;
+}
+.subscribe-band .eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px;
+}
+.subscribe-band h3 { font-size: 23px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.subscribe-band p.lead {
+  font-size: 14px; color: rgba(255,255,255,0.75);
+  max-width: 440px; margin: 0 auto 22px;
+}
+.subscribe-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+.subscribe-form input {
+  flex: 1; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08); color: var(--white);
+  font-family: var(--font); font-size: 14px;
+}
+.subscribe-form input::placeholder { color: rgba(255,255,255,0.5); }
+.subscribe-form button {
+  background: var(--white); color: var(--dark); border: none;
+  padding: 12px 24px; font-weight: 700; font-size: 13px; cursor: pointer;
+  font-family: var(--font); transition: background 0.2s;
+}
+.subscribe-form button:hover { background: var(--cream); }
+.subscribe-band iframe { display: block; margin: 0 auto; }
+.subscribe-band--embed { padding: 26px; }
+.subscribe-embed { max-width: 480px; margin: 0 auto; }
+.subscribe-note { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 14px; }
+.subscribe-note code { background: rgba(255,255,255,0.12); padding: 1px 5px; border-radius: 3px; }
+@media (max-width: 520px) { .subscribe-form { flex-direction: column; } }
+
+/* ── Post footer / CTA ── */
+.article-cta {
+  margin-top: 64px; padding: 36px 40px; background: var(--cream);
+  text-align: center;
+}
+.article-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.article-cta p { font-size: 14px; color: var(--dark-75); margin-bottom: 20px; }
+.article-cta a {
+  display: inline-block; background: var(--dark); color: var(--white);
+  padding: 13px 30px; font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s;
+}
+.article-cta a:hover { background: var(--accent); }
+
+/* ── Footer (matches site) ── */
+.site-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 48px; border-top: 1px solid var(--dark-20);
+  font-size: 12px; color: var(--dark-50); flex-wrap: wrap; gap: 12px;
+}
+.footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-links a { color: var(--dark-50); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--dark); }
+.footer-social { display: inline-flex; align-items: center; gap: 14px; margin-left: 4px; padding-left: 20px; border-left: 1px solid var(--dark-20); }
+.footer-social a { display: inline-flex; align-items: center; }
+.footer-social svg { width: 16px; height: 16px; fill: var(--dark-50); transition: fill 0.2s; }
+.footer-social a:hover svg { fill: var(--dark); }
+
+@media (max-width: 700px) {
+  .site-nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .article-wrap { padding: 120px 20px 60px; }
+  .site-footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav">
+  <a href="/" class="nav-wordmark">Surrey Street Partners</a>
+  <div class="nav-links">
+    <a href="/consulting/">Consulting</a>
+    <a href="/team/">Team</a>
+    <a href="/blog/" class="active">Insights</a>
+    <a href="/#how-we-work">How We Work</a>
+    <a href="/#contact">Contact</a>
+    <a href="/clients/">Client Login</a>
+  </div>
+</nav>
+
+<!-- ── Article ── -->
+<article class="article-wrap">
+  <a href="/blog/" class="article-back">&larr; All insights</a>
+  <div class="article-eyebrow">Agentic Finance</div>
+  <h1 class="article-title">Your Agent Has Your Password. Who Has Your Refund?</h1>
+  <p class="article-subtitle">Everyone built the part that proves you agreed. Nobody built the part where you get your money back.</p>
+  <div class="article-meta">
+    <span>Vevina McAllister</span>
+    <span class="dot">&#10022;</span>
+    <time datetime="2026-07-27">July 27, 2026</time>
+    <span class="dot">&#10022;</span>
+    <span>11 min read</span>
+  </div>
+
+  <img class="article-hero" src="/blog/agent-password-refund/hibernia.jpg" alt="A 1930s-style bank robbery outside the Hibernia Bank — masked figures, a cash bag, bystanders with hands raised">
+
+  <div class="article-body">
+<blockquote><p><strong>TL;DR</strong> — Four protocols shipped in ten months. Every one proves you authorized your agent. Not one says who pays when it gets it wrong. And Reg E only covers transfers you <em>didn't</em> authorize — so the proof is the trap. Six parties could have closed that gap. All six passed.</p></blockquote>
+<hr>
+<p>You set it up on a Tuesday night. A spending limit, a couple of rules, a signature you barely notice giving. Around three in the morning your agent buys something — the wrong item, or a subscription you canceled in March, or exactly what a malicious web page told it to buy while you slept.</p>
+<p>You call your bank in the morning.</p>
+<p>And the bank does something no bank has ever been able to do quite this cleanly: it produces cryptographic proof that you authorized this agent to act for you.</p>
+<p>That proof isn't the start of your dispute. It's probably the end of it.</p>
+<p>I should say up front that I'm building a consumer app that aggregates bank, card and investment data — which makes me one more party in the chain I'm about to describe. Factor that in. I'd rather say it first than have it land as a reveal.</p>
+<h2>Human Not Present</h2>
+<p>None of this is a 2030 thought experiment. In about ten months, the authorisation layer for agentic payments went from conference slides to production.</p>
+<p>Google published <a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol" target="_blank" rel="noopener noreferrer">AP2</a> in September 2025 with sixty-plus partners, then <a href="https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/" target="_blank" rel="noopener noreferrer">handed it to the FIDO Alliance</a> in April 2026 for open governance. Stripe and OpenAI shipped the <a href="https://stripe.com/blog/developing-an-open-standard-for-agentic-commerce" target="_blank" rel="noopener noreferrer">Agentic Commerce Protocol</a> the same month AP2 launched — the same day Instant Checkout went live in ChatGPT. Visa followed in October with its Trusted Agent Protocol. Mastercard shipped <a href="https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html" target="_blank" rel="noopener noreferrer">Agent Pay for Machines</a> in June 2026.</p>
+<p>AP2 is the one worth understanding, because it's the most honest about what it does. Three cryptographically signed <strong>Mandates</strong> — Intent, Cart, Payment — as W3C Verifiable Credentials. The Intent Mandate is where it gets interesting: it supports what the spec calls a <strong>Human Not Present</strong> flow. You pre-sign an intent with price limits and conditions. Your agent executes against it later. Nobody is watching.</p>
+<p>This is genuinely good engineering. It solves a hard problem — how does a merchant know the software at its door really speaks for the human it claims to represent? — and solves it well. Non-repudiable, auditable, clean.</p>
+<p>From the consumer's side, it's also the problem.</p>
+<h2>Is this really the agent the cardholder authorized?</h2>
+<p>Regulation E protects you against <em><strong>unauthorized</strong></em> electronic fund transfers. That one word carries the entire weight.</p>
+<p>Under <a href="https://www.ecfr.gov/current/title-12/chapter-X/part-1005/subpart-A/section-1005.2" target="_blank" rel="noopener noreferrer">12 C.F.R. §1005.2(m)</a>, an unauthorized transfer has three parts: initiated by someone <em>other than you</em>, <em>without actual authority</em>, and <em>from which you receive no benefit</em>. The liability caps and the error-resolution rights at §1005.11 — the machinery that actually makes you whole — hang off that definition and nothing else.</p>
+<p>Now hold that up against Tuesday night. A signed mandate is about as clean a grant of actual authority as anyone has ever produced. And when your agent buys the wrong thing, you usually still get the thing — so even the no-benefit prong cuts against you. The access device exception does the rest: hand over the keys, and the loss may be yours.</p>
+<p>No court has ruled on any of this. I want to be careful there, because the honest claim isn't "consumers have lost their remedy." It's that nobody knows, and the not-knowing <em>is</em> the finding. The statute predates the technology by four decades, and the first consumer to learn the answer will learn it the expensive way.</p>
+<p>Here's the inversion at the center of it. Old authentication asks: <em>is this really the cardholder?</em> Agentic authentication asks: <em>is this really the agent the cardholder authorized?</em> Those sound like the same question. In effect they're opposites. Answering the first one <strong>yes</strong> protects you. Answering the second one <strong>yes</strong> forecloses your best remedy.</p>
+<p>John Lande — a banking attorney at Dickinson Bradshaw who chairs the firm's cybersecurity practice and spends his days advising financial institutions on fraud exposure — <a href="https://www.dickinsonbradshaw.com/blogs-articles/2026/01/20/new-reg-e-liability-the-ai-bought-that-not-me" target="_blank" rel="noopener noreferrer">put it plainly</a> in January 2026: <em>"Someone is going to be left holding the bag for agentic AI misfiring."</em> Worth noting who's saying that. Not a consumer advocate predicting harm — the banks' own counsel, looking at the same hole.</p>
+<p>And there's a jagged edge nobody has touched. An agent talked into a purchase by a malicious page — prompt injection — is neither cleanly authorized nor cleanly unauthorized. You granted authority. You didn't grant <em>that</em>. There's no law on it, and no protocol I've read even gestures at it.</p>
+<h2>How about liability? Six parties. Six deferrals.</h2>
+<p>This is the part that changed how I think about the problem. The gap isn't an oversight. Six different parties looked straight at it and deferred.</p>
+<p><strong>The rule.</strong> When the CFPB finalised its <a href="https://www.federalregister.gov/documents/2024/11/18/2024-25079/required-rulemaking-on-personal-financial-data-rights" target="_blank" rel="noopener noreferrer">§1033 personal financial data rule</a> in 2024, it declined to allocate liability — not for lack of asking. Data providers asked. A trade association asked. An academic asked. <em>A consumer advocate asked.</em> The answer: institutions should rely on appropriately developed private network rules.</p>
+<p><strong>The protocols.</strong> AP2 defers liability and dispute resolution to "industry rules and standards." ACP, Visa's TAP and Mastercard's Agent Pay do the equivalent. All of them solve authorisation with real rigour. None allocates loss.</p>
+<p><strong>The CFPB, again.</strong> In <a href="https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal" target="_blank" rel="noopener noreferrer">May 2025</a> it withdrew Circulars 2022-03 and 2023-03 — its guidance on algorithmic and AI-driven adverse action — as part of a bulk withdrawal of 67 documents. Its <a href="https://www.consumerfinance.gov/ai/" target="_blank" rel="noopener noreferrer">public AI page</a> is now devoted entirely to the Bureau's internal use of AI, and states: <em>"CFPB has no AI use cases to report."</em></p>
+<p><strong>The prudential regulators.</strong> In <a href="https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-29.html" target="_blank" rel="noopener noreferrer">April 2026</a> the Fed, OCC and FDIC revised model-risk guidance for the first time since 2011 — and put generative and agentic AI <strong>explicitly out of scope</strong>, on the reasoning that they're novel and fast-moving and need their own framework. To their credit, they've promised a request for information on exactly that. Promised. Not published.</p>
+<p><strong>The consumer advocates.</strong> Consumer Reports published a 108-page <a href="https://innovation.consumerreports.org/wp-content/uploads/2026/04/AI-in-Consumer-Finance-Landscape-Analysis.pdf" target="_blank" rel="noopener noreferrer">landscape analysis</a> of AI in consumer finance in April 2026. It mentions Reg E, Reg Z, UDAAP, EFTA and §1033 a combined <strong>zero times</strong>. I ran the search twice because I didn't believe it. The <a href="https://advocacy.consumerreports.org/press_release/consumer-reports-unveils-consumer-finance-ai-standard-a-first-of-its-kind-framework-defining-what-consumers-are-owed-from-ai-powered-financial-products" target="_blank" rel="noopener noreferrer">Consumer Finance AI Standard</a> that followed in June is voluntary by design. Delicia Hand, who leads the work, <a href="https://thefinancialbrand.com/news/customer-experience-banking/who-will-protect-banking-consumers-rights-in-the-age-of-ai-consumer-reports-has-thoughts-198617" target="_blank" rel="noopener noreferrer">told The Financial Brand</a>: <em>"We're not necessarily looking for the standards to be taken up by regulators."</em></p>
+<p><strong>The industry.</strong> The Consumer Bankers Association <a href="https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks/" target="_blank" rel="noopener noreferrer">white-papered this exact gap</a> in January 2026, concluded statutory change was unlikely, and proposed — self-regulation through private network rules.</p>
+<p>One more for completeness: FDX <a href="https://financialdataexchange.org/fdx-feed/as-ai-agents-get-involved-in-financial-data-sharing-leading-standards-body-launches-initiative-to-stay-ahead/" target="_blank" rel="noopener noreferrer">launched an agentic AI initiative</a> in April 2026 and closed its Call for Input on May 29. No standard has been published.</p>
+<p>Line those up and the shape is unmistakable. Everyone deferred to "industry rules and standards" that don't exist. The consumer is the residual claimant on a question nobody has answered.</p>
+<p>Meanwhile the §1033 rule itself is enjoined — <em>Forcht Bank, N.A. v. CFPB</em>, <a href="https://bankingjournal.aba.com/2025/11/kentucky-federal-court-enjoins-cfpb-from-enforcing-current-1033-final-rule/" target="_blank" rel="noopener noreferrer">entered October 2025</a> in the Eastern District of Kentucky — and back at the Bureau for a rewrite. Subpart D never took effect, so nothing was taken from consumers that they had. What the injunction did was foreclose the only US rule that would have meaningfully limited what aggregators may do with the access you grant them.</p>
+<h2>Builders gonna build … the easy bit.</h2>
+<p>Fair objection, and it deserves a real answer — particularly from me, since I'm one of the vendors.</p>
+<p>You can supervise aggregators. Mandate SOC 2. Ban credential sharing, require verified agent identities, demand attestation at every hop. <strong>All of it is worth doing.</strong> I'm not making the argument that compliance is too heavy. Fiduciary duty, GLBA, Reg E, SOC 2 exist because people's money is at stake, and they <em>should</em> be expensive.</p>
+<p>My argument is narrower: the wrong things are getting the rigour. Nothing on that list allocates loss.</p>
+<p>Verification tells you <em>who acted</em>. It doesn't tell you <em>who pays</em>.</p>
+<p>And I think I know why we keep building the first one. We always solve the easy part first — the <em>how</em>. It's the fun part. The cryptography. The signed mandates. The chain of custody, the tracing, the handoff across six systems that all have to agree. That work is hard in the way engineers enjoy: tractable, testable, demo-able. It has a right answer.</p>
+<p>The other part isn't technical at all. It's deciding who eats the loss. It's splitting the hair between an agent authorized to buy something and an agent that bought <em>that</em> something. It's drawing a line and then defending it to whoever lands on the wrong side. No elegant solution, no test suite, no standing ovation at a conference. So it doesn't get built — and everyone points at the genuinely beautiful thing they <em>did</em> build and calls the job done.</p>
+<blockquote><p>Verification is a security control. Liability is a remedy. The industry keeps shipping the first and calling it the second.</p></blockquote>
+<p>There's a workable way to allocate this loss without waiting on Congress. That's its own piece, not three rushed paragraphs at the end of this one.</p>
+<h2>And the consumer? You own the data. That's all you own.</h2>
+<p>The statute at the center of all this is called, in full, <strong>Personal Financial Data Rights</strong>. You nominally own the data. In the scenario I opened with, you have no leverage over anyone in the chain and quite possibly no remedy against any of them.</p>
+<p>That's ownership without power, and people feel it even when they can't cite the regulation. Consumer Reports asked more than 4,000 Americans whether current law protects them from AI risk in financial services; <strong>57% said no</strong>, and <strong>fewer than one in ten</strong> completely trust financial companies to use AI responsibly. Those aren't numbers about technology. They're numbers about recourse.</p>
+<p>CR's standard includes a principle I keep coming back to — a <strong>duty of vigor</strong>: the idea that an AI financial product shouldn't just avoid harming you, it should actively work your side, surfacing the rights you have so you don't need to know the law yourself. Nobody is building that. We're building the exact inverse — systems that are exquisitely good at proving what you agreed to.</p>
+<p>Which brings me back to my own seat in this. I'm building a product that adds one more party to the chain — one more entity holding access, one more link where something can go wrong and the loss comes to rest on whoever is least equipped to argue. That's not a flaw in the argument. It's the reason to make it. If I'm going to ask people to trust a new intermediary with their financial data, the least I owe them is honesty about what happens when the intermediary, or the agent, or the protocol, or the bank gets it wrong.</p>
+<p>Right now the honest answer is: nobody knows. And everyone who could have answered decided it was someone else's question.</p>
+<hr>
+<h2>Sources</h2>
+<p><strong>Law and rules</strong></p>
+<ul><li><a href="https://www.ecfr.gov/current/title-12/chapter-X/part-1005/subpart-A/section-1005.2" target="_blank" rel="noopener noreferrer">12 C.F.R. §1005.2 — Regulation E definitions</a> (eCFR) · <a href="https://www.consumerfinance.gov/rules-policy/regulations/1005/2/" target="_blank" rel="noopener noreferrer">CFPB copy</a> · <a href="https://www.ecfr.gov/current/title-12/chapter-X/part-1005" target="_blank" rel="noopener noreferrer">Part 1005 in full</a>, including §1005.11 error resolution</li><li><a href="https://www.federalregister.gov/documents/2024/11/18/2024-25079/required-rulemaking-on-personal-financial-data-rights" target="_blank" rel="noopener noreferrer">Required Rulemaking on Personal Financial Data Rights</a> — the §1033 final rule, Federal Register</li><li><em>Forcht Bank, N.A. v. CFPB</em> (E.D. Ky.), preliminary injunction October 29, 2025, Judge Danny C. Reeves — <a href="https://bankingjournal.aba.com/2025/11/kentucky-federal-court-enjoins-cfpb-from-enforcing-current-1033-final-rule/" target="_blank" rel="noopener noreferrer">ABA Banking Journal</a> · <a href="https://www.mvalaw.com/data-points/cfpb-enjoined-from-enforcing-personal-financial-data-rights-rule-1033" target="_blank" rel="noopener noreferrer">Moore &amp; Van Allen</a> · <a href="https://www.americanbanker.com/news/court-halts-compliance-with-cfpbs-final-open-banking-rule" target="_blank" rel="noopener noreferrer">American Banker</a></li><li><a href="https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal" target="_blank" rel="noopener noreferrer">Interpretive Rules, Policy Statements, and Advisory Opinions; Withdrawal</a> — Federal Register, May 12, 2025 (the 67 documents) · <a href="https://www.hklaw.com/en/insights/publications/2025/05/cfpb-rescinds-67-guidance-documents" target="_blank" rel="noopener noreferrer">Holland &amp; Knight summary</a></li><li><a href="https://www.consumerfinance.gov/ai/" target="_blank" rel="noopener noreferrer">CFPB — Artificial Intelligence</a></li><li><a href="https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-29.html" target="_blank" rel="noopener noreferrer">OCC news release</a> and <a href="https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html" target="_blank" rel="noopener noreferrer">Bulletin 2026-13</a> — revised interagency model risk management guidance, April 17, 2026 · analysis from <a href="https://www.sullcrom.com/insights/memo/2026/April/OCC-Fed-FDIC-Issue-Revised-Guidance-Model-Risk-Management" target="_blank" rel="noopener noreferrer">Sullivan &amp; Cromwell</a> and <a href="https://www.davispolk.com/insights/client-update/visual-memo-key-changes-under-federal-banking-agencies-revised-model-risk" target="_blank" rel="noopener noreferrer">Davis Polk</a></li></ul>
+<p><strong>Protocols</strong></p>
+<ul><li><a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol" target="_blank" rel="noopener noreferrer">Google — Agent Payments Protocol (AP2)</a>, September 2025</li><li><a href="https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/" target="_blank" rel="noopener noreferrer">FIDO Alliance — standards for trusted AI agent interactions</a>, April 2026 (AP2 contribution; Payments TWG chaired by Mastercard and Visa)</li><li><a href="https://stripe.com/blog/developing-an-open-standard-for-agentic-commerce" target="_blank" rel="noopener noreferrer">Stripe / OpenAI — Agentic Commerce Protocol</a>, September 2025</li><li><a href="https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html" target="_blank" rel="noopener noreferrer">Mastercard — Agent Pay for Machines</a>, June 10, 2026</li><li>Visa — Trusted Agent Protocol, announced October 14, 2025</li></ul>
+<p><strong>Industry and advocacy</strong></p>
+<ul><li><a href="https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks/" target="_blank" rel="noopener noreferrer">Consumer Bankers Association / Davis Wright Tremaine — *Agentic AI Payments*</a>, January 2026</li><li><a href="https://innovation.consumerreports.org/wp-content/uploads/2026/04/AI-in-Consumer-Finance-Landscape-Analysis.pdf" target="_blank" rel="noopener noreferrer">Consumer Reports — *AI in Consumer Finance: Landscape Analysis*</a> (PDF), April 2026</li><li><a href="https://advocacy.consumerreports.org/press_release/consumer-reports-unveils-consumer-finance-ai-standard-a-first-of-its-kind-framework-defining-what-consumers-are-owed-from-ai-powered-financial-products" target="_blank" rel="noopener noreferrer">Consumer Reports — Consumer Finance AI Standard</a>, June 2026 — source of the duty of vigor and the survey of 4,000+ consumers</li><li><a href="https://thefinancialbrand.com/news/customer-experience-banking/who-will-protect-banking-consumers-rights-in-the-age-of-ai-consumer-reports-has-thoughts-198617" target="_blank" rel="noopener noreferrer">The Financial Brand</a> — Delicia Hand quote</li><li><a href="https://financialdataexchange.org/fdx-feed/as-ai-agents-get-involved-in-financial-data-sharing-leading-standards-body-launches-initiative-to-stay-ahead/" target="_blank" rel="noopener noreferrer">FDX — agentic AI initiative</a>, April 2026</li></ul>
+<p><strong>Practitioner view</strong></p>
+<ul><li><a href="https://www.dickinsonbradshaw.com/blogs-articles/2026/01/20/new-reg-e-liability-the-ai-bought-that-not-me" target="_blank" rel="noopener noreferrer">John Lande, Dickinson Bradshaw — *New Reg E Liability: "The AI Bought That, Not Me"*</a>, January 20, 2026</li></ul>
+  </div>
+
+  <section class="subscribe-band subscribe-band--embed" aria-label="Subscribe to the newsletter">
+    <div class="subscribe-embed"><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="358a45c0-b037-4d97-9539-76a43f858308"></script></div>
+  </section>
+
+  <div class="article-cta">
+    <h3>Working on a hard problem in payments, open banking, or AI?</h3>
+    <p>We embed with engineering teams and ship production systems — not decks.</p>
+    <a href="/#contact">Get in touch</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="/consulting/">Consulting</a>
+    <a href="/team/">Team</a>
+    <a href="/blog/">Insights</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/clients/">Client Login</a>
+    <span class="footer-social">
+      <a href="https://www.linkedin.com/company/surrey-street-partners/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+      </a>
+      <a href="https://x.com/surreystreetai" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://bsky.app/profile/surreystreet.ai" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.203 3.61c2.71 2.033 5.626 6.155 6.697 8.368 1.07-2.213 3.986-6.335 6.696-8.369C20.55 2.144 23.61 1.012 23.61 4.503c0 .697-.4 5.856-.634 6.694-.815 2.911-3.787 3.653-6.43 3.203 4.62.786 5.797 3.39 3.258 5.996-4.822 4.948-6.93-1.242-7.47-2.828-.099-.29-.145-.427-.146-.31-.001-.117-.047.02-.146.31-.54 1.586-2.647 7.776-7.47 2.828-2.539-2.605-1.361-5.21 3.258-5.996-2.643.45-5.615-.292-6.43-3.203C.209 10.36-.19 5.2-.19 4.503c0-3.491 3.06-2.359 4.014-.893l1.379 0z"/></svg>
+      </a>
+    </span>
+  </div>
+  <span>&copy; 2026 Surrey Street Partners, LLC</span>
+  <span>vevina@surreystreet.ai</span>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4d7a22bb5e024dbc86f9fc8709ef09cb"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

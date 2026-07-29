@@ -308,7 +308,15 @@ def _consume_list(lines, i, ordered):
 
 # ── Post model ──────────────────────────────────────────────────────────────
 def reading_time(md):
-    words = len(re.findall(r"\w+", md))
+    """Estimate reading time from prose only. URLs, code blocks and link targets are
+    stripped first — otherwise a link-heavy post (a sources list, say) counts every
+    path segment as a word and badly overstates the time."""
+    t = re.sub(r"```.*?```", " ", md, flags=re.S)          # fenced code
+    t = re.sub(r"`[^`]*`", " ", t)                          # inline code
+    t = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", t)        # links/images -> visible text only
+    t = re.sub(r"<[^>]+>", " ", t)                          # raw html tags
+    t = re.sub(r"https?://\S+", " ", t)                     # bare urls
+    words = len(re.findall(r"\w+", t))
     mins = max(1, round(words / 200))
     return "%d min read" % mins
 
@@ -380,6 +388,7 @@ def load_posts():
             "slug": slug,
             "date": date,
             "author": meta.get("author", DEFAULT_AUTHOR),
+            "subtitle": meta.get("subtitle", ""),
             "hero": meta.get("hero", ""),
             "og_image": abs_url(meta.get("og_image") or meta.get("hero") or DEFAULT_OG_IMAGE),
             "og_image_alt": meta.get("og_image_alt", title),
@@ -475,6 +484,13 @@ def subscribe_band():
     )
 
 
+def subtitle_html(post):
+    """Optional standfirst under the title — rendered only when the .meta sets `subtitle`."""
+    if not post.get("subtitle"):
+        return ""
+    return '<p class="article-subtitle">%s</p>' % html.escape(post["subtitle"], quote=False)
+
+
 def hero_html(post):
     """Optional on-page hero image at the top of a post — rendered only when the
     post's .meta sets `hero` (a root-relative image path). Also becomes the OG
@@ -500,6 +516,7 @@ def render_posts(posts, template):
             "TAG_META": tag_meta(p),
             "READING_TIME": p["reading_time"],
             "EYEBROW": html.escape(p["eyebrow"], quote=True),
+            "SUBTITLE": subtitle_html(p),
             "HERO": hero_html(p),
             "BODY_HTML": p["body_html"],
             "JSONLD": jsonld(p),
