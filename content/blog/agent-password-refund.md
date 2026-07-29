@@ -16,7 +16,7 @@ I should say up front that I'm building a consumer app that aggregates bank, car
 
 ## Human Not Present
 
-None of this is a 2030 thought experiment. In about ten months, the authorisation layer for agentic payments went from conference slides to production.
+None of this is a 2030 thought experiment. In about ten months, the authorization layer for agentic payments went from conference slides to production.
 
 Google published [AP2](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol) in September 2025 with sixty-plus partners, then [handed it to the FIDO Alliance](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/) in April 2026 for open governance. Stripe and OpenAI shipped the [Agentic Commerce Protocol](https://stripe.com/blog/developing-an-open-standard-for-agentic-commerce) the same month AP2 launched — the same day Instant Checkout went live in ChatGPT. Visa followed in October with its Trusted Agent Protocol. Mastercard shipped [Agent Pay for Machines](https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html) in June 2026.
 
@@ -46,9 +46,9 @@ And there's a jagged edge nobody has touched. An agent talked into a purchase by
 
 This is the part that changed how I think about the problem. The gap isn't an oversight. Six different parties looked straight at it and deferred.
 
-**The rule.** When the CFPB finalised its [§1033 personal financial data rule](https://www.federalregister.gov/documents/2024/11/18/2024-25079/required-rulemaking-on-personal-financial-data-rights) in 2024, it declined to allocate liability — not for lack of asking. Data providers asked. A trade association asked. An academic asked. *A consumer advocate asked.* The answer: institutions should rely on appropriately developed private network rules.
+**The rule.** When the CFPB finalized its [§1033 personal financial data rule](https://www.federalregister.gov/documents/2024/11/18/2024-25079/required-rulemaking-on-personal-financial-data-rights) in 2024, it declined to allocate liability — not for lack of asking. Data providers asked. A trade association asked. An academic asked. *A consumer advocate asked.* The answer: institutions should rely on appropriately developed private network rules.
 
-**The protocols.** AP2 defers liability and dispute resolution to "industry rules and standards." ACP, Visa's TAP and Mastercard's Agent Pay do the equivalent. All of them solve authorisation with real rigour. None allocates loss.
+**The protocols.** AP2 defers liability and dispute resolution to "industry rules and standards." ACP, Visa's TAP and Mastercard's Agent Pay do the equivalent. All of them solve authorization with real rigor. None allocates loss.
 
 **The CFPB, again.** In [May 2025](https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal) it withdrew Circulars 2022-03 and 2023-03 — its guidance on algorithmic and AI-driven adverse action — as part of a bulk withdrawal of 67 documents. Its [public AI page](https://www.consumerfinance.gov/ai/) is now devoted entirely to the Bureau's internal use of AI, and states: *"CFPB has no AI use cases to report."*
 
@@ -70,7 +70,7 @@ Fair objection, and it deserves a real answer — particularly from me, since I'
 
 You can supervise aggregators. Mandate SOC 2. Ban credential sharing, require verified agent identities, demand attestation at every hop. **All of it is worth doing.** I'm not making the argument that compliance is too heavy. Fiduciary duty, GLBA, Reg E, SOC 2 exist because people's money is at stake, and they *should* be expensive.
 
-My argument is narrower: the wrong things are getting the rigour. Nothing on that list allocates loss.
+My argument is narrower: the wrong things are getting the rigor. Nothing on that list allocates loss.
 
 Verification tells you *who acted*. It doesn't tell you *who pays*.
 
