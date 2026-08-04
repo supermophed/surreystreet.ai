@@ -16,5 +16,5 @@ Generic:    https://surreystreet.ai/blog/everyone-reads-your-permission-generous
 
 === COMPONENTS ===
 Headline:  Everyone Reads Your Permission Generously
-One-liner: Fourteen years of fighting over §1033 covered checking accounts and credit cards. The access you actually grant has no declared scope and no committed duration.
+One-liner: Fourteen years of fighting over §1033 covered basic bank accounts and credit cards. The access you actually grant has no declared scope and no committed duration.
 Hook:      ---

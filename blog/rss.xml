@@ -6,13 +6,13 @@
     <atom:link href="https://surreystreet.ai/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Field notes on payments, open banking, capital markets, commerce, and AI infrastructure.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 14:27:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 14:43:57 +0000</lastBuildDate>
     <item>
       <title>Everyone Reads Your Permission Generously</title>
       <link>https://surreystreet.ai/blog/everyone-reads-your-permission-generously/</link>
       <guid isPermaLink="true">https://surreystreet.ai/blog/everyone-reads-your-permission-generously/</guid>
       <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Fourteen years of fighting over §1033 covered checking accounts and credit cards. The access you actually grant has no declared scope and no committed duration.</description>
+      <description>Fourteen years of fighting over §1033 covered basic bank accounts and credit cards. The access you actually grant has no declared scope and no committed duration.</description>
       <content:encoded><![CDATA[<blockquote><p><strong>TL;DR</strong> — The financial industry spent fourteen years fighting over §1033 only to cover basic bank accounts and credit cards. The data required to understand a complete financial picture — brokerages, retirements, and mortgages — was completely left out. Meanwhile, the access consumers do grant comes with zero guardrails: no declared scope, no committed duration, no guarantee that revoking access actually works. Regulators keep missing the mark, and the rest of the industry quietly capitalizes on the gap.</p></blockquote>
 <hr>
 <p>After more than two decades in fintech, I recently began building a product that relies on aggregated bank, card, and investment data. I have a horse in this race, and you deserve to know my bias upfront before reading any further.</p>
