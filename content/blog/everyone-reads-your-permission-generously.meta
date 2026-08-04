@@ -1,0 +1,47 @@
+# Publishing metadata for everyone-reads-your-permission-generously.md
+# Prose lives in the .md (from Cowork) and can be re-synced freely; these fields persist.
+# Post 2 of the fintech series. Companion fact-check: post-2-factcheck-notes.md (Cowork outputs).
+
+title: "Everyone Reads Your Permission Generously"
+description: "Fourteen years of fighting over §1033 covered checking accounts and credit cards. The access you actually grant has no declared scope and no committed duration."
+subtitle: "Consumer financial data moves constantly. Everyone sets the terms except the person it belongs to."
+slug: everyone-reads-your-permission-generously
+date: 2026-08-04
+author: Vevina McAllister
+eyebrow: Open Banking
+tags: [open banking, CFPB 1033, bank data, data portability, fintech, consumer data rights, aggregators, Plaid]
+draft: false
+hero: /blog/everyone-reads-your-permission-generously/pointing.jpg
+og_image_alt: "Figures in overcoats and fedoras stand in a circle outside a neoclassical bank, each pointing at someone else. The facade reads: Institutions write the rules, everyone reads them generously."
+
+# ⚠️ draft: false is set ONLY so this renders for your review. NOTHING is committed or pushed.
+#    Flip to `draft: true` if you want a hard interlock against accidental deploy.
+
+# hero: renders on-page AND becomes the OG/Twitter unfurl card — one line does both.
+#   Source art is pointing.png (2.6MB, 1536x1024); pointing.jpg is the optimized 1200x800 web version.
+#   Source was already 3:2, so it resized with no crop. Ship only the .jpg — the .png is
+#   gitignored via blog/*/*.png and stays local.
+
+# ── DECISIONS FOR YOU ──
+# [ ] SLUG. The Cowork file was named "gtm-easy-part" but that was a working title — the piece
+#     is the permission post, and a gtm-* slug would collide with the published /blog/gtm-stack-isnt-free/.
+#     Current slug matches the headline. Shorter alternative: the-permission-problem
+#     Free to change now; breaks live URLs after publish.
+# [ ] DATE. 2026-08-10 is a placeholder (post 3 is slated Aug 18).
+# [ ] LENGTH. 2,518 prose words vs. the brief's 1,600–1,900 target and 1,748 for the last post.
+
+# ── beehiiv excerpt (build ignores this; use it when composing the newsletter LAST) ──
+# "Banks share enormously — 130 million connections and climbing. What they don't share is a right.
+#  Consent looks like a switch to the person clicking it; what it actually reaches is a negotiated
+#  position between two companies. And §1033, the rule that would have set an outer limit, never
+#  covered brokerage, retirement or mortgages in the first place."
+
+# ── PRE-PUBLISH CHECKLIST ──
+# [ ] Re-verify §1033 status the MORNING of publish — fastest-moving fact in the piece.
+#     Verified 2026-08-03: no NPRM published; Aug 22 2025 ANPR is the most recent action;
+#     rule is ENJOINED, NOT VACATED (Forcht Bank, N.A. v. CFPB, E.D. Ky., Oct 29 2025).
+# [x] Hero image + og_image_alt — done 2026-08-03.
+# [ ] Fixed on wiring: the Kansas City Fed source was listed twice in Sources — deduped.
+# [ ] American English: pattern-scanned clean on arrival (no British forms). Re-scan if prose changes.
+# [ ] Optional add — the addendum's Taylor line ("$5m to $500k") as corroboration for the
+#     "building got cheap" premise in section 1. Cowork did not use it. Not required.
