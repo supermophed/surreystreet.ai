@@ -1,12 +1,12 @@
 # Surrey Street Partners
 
-> Product and AI consulting practice focused on payments, commerce, and financial infrastructure. Founded by Vevina McAllister, with Principal Amy Hoffman covering open banking and capital markets.
+> Product and AI consulting practice focused on payments, commerce, and financial infrastructure. Founded by Vevina McAllister, with advisor Amy Hoffman covering open banking and capital markets.
 
 ## Pages
 
 - [Home](https://surreystreet.ai/): Surrey Street Partners overview and practice areas
 - [Consulting](https://surreystreet.ai/consulting/): Engagement model, what we work on, who we work with
-- [Team](https://surreystreet.ai/team/): Principal bios — Vevina McAllister and Amy Hoffman
+- [Team](https://surreystreet.ai/team/): Team bios — Vevina McAllister (Founder & Principal) and advisor Amy Hoffman
 - [Insights](https://surreystreet.ai/blog/): Industry analysis on payments, AI product strategy, and fintech
 
 ## Optional

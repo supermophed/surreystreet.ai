@@ -2,7 +2,7 @@
 
 **Independent thinking, operational ingenuity, unyielding integrity.**
 
-Surrey Street Partners is a senior product practice that helps companies build and ship production systems in payments, open banking, capital markets, commerce, and AI. Two principals. 30+ combined years. Embedded delivery, not advisory decks.
+Surrey Street Partners is a senior product practice that helps companies build and ship production systems in payments, open banking, capital markets, commerce, and AI. A senior principal with an experienced advisor. 30+ combined years. Embedded delivery, not advisory decks.
 
 ---
 
@@ -14,7 +14,7 @@ We embed with your team and build production systems — not decks. Our combined
 
 ## Our approach: hands-on delivery
 
-Two principals with deep operating experience — building alongside your engineers, not above them.
+Senior operators with deep hands-on experience — building alongside your engineers, not above them.
 
 ### Process
 
@@ -44,7 +44,7 @@ Product executive with 15+ years building platforms at the intersection of comme
 
 [LinkedIn](https://www.linkedin.com/in/vmmcallister/)
 
-### Amy Hoffman — Principal
+### Amy Hoffman — Advisor
 
 Fintech platform executive with 15+ years building open banking, financial data, and trading infrastructure. Wells Fargo Open Banking (1.5B+ API calls, CFPB 1033), Dow Jones, Charles Schwab, E*TRADE, Market Compass / CBOE. FINRA Series 3, 7, and 63. Co-author of *Fundamentals of the Options Market* (McGraw-Hill).
 
