@@ -2,7 +2,7 @@
 
 **Independent thinking, operational ingenuity, unyielding integrity.**
 
-Surrey Street Partners is a senior product practice that helps companies build and ship production systems in payments, open banking, capital markets, commerce, and AI. A senior principal with an experienced advisor. 30+ combined years. Embedded delivery, not advisory decks.
+Surrey Street Partners is a senior product practice that helps companies build and ship production systems in payments, open banking, capital markets, commerce, and AI. A managing partner with an experienced advisor. 30+ combined years. Embedded delivery, not advisory decks.
 
 ---
 
@@ -38,7 +38,7 @@ Senior operators with deep hands-on experience — building alongside your engin
 
 ## Team
 
-### Vevina McAllister — Founder & Principal
+### Vevina McAllister — Founder & Managing Partner
 
 Product executive with 15+ years building platforms at the intersection of commerce, payments, and developer infrastructure. Twilio, PayPal/Braintree, Amazon, Atlassian, Zillow Group.
 

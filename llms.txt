@@ -6,7 +6,7 @@
 
 - [Home](https://surreystreet.ai/): Surrey Street Partners overview and practice areas
 - [Consulting](https://surreystreet.ai/consulting/): Engagement model, what we work on, who we work with
-- [Team](https://surreystreet.ai/team/): Team bios — Vevina McAllister (Founder & Principal) and advisor Amy Hoffman
+- [Team](https://surreystreet.ai/team/): Team bios — Vevina McAllister (Founder & Managing Partner) and advisor Amy Hoffman
 - [Insights](https://surreystreet.ai/blog/): Industry analysis on payments, AI product strategy, and fintech
 
 ## Optional
