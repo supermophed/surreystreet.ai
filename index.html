@@ -6,7 +6,7 @@
 <title>Surrey Street Partners — Commercial Architecture for B2B SaaS</title>
 <meta name="description" content="Surrey Street Partners helps B2B SaaS companies implement pricing and growth changes across the product and financial systems that make them work — customer onboarding and entitlements through billing, payments, and revenue reporting.">
 <meta property="og:title" content="Surrey Street Partners — Commercial Architecture for B2B SaaS">
-<meta property="og:description" content="Pricing changes, billing migrations, quote-to-cash rebuilds. We embed with product and finance teams to ship the systems revenue depends on.">
+<meta property="og:description" content="Pricing changes, billing migrations, quote-to-cash rebuilds — and the monetization architecture AI products are going to need. We embed with product and finance teams to ship the systems revenue depends on.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://surreystreet.ai">
 <meta property="og:image" content="https://surreystreet.ai/logo/leopard_face.png">
@@ -16,7 +16,7 @@
 <meta name="keywords" content="B2B SaaS consulting, commercial architecture, pricing transformation, billing migration, quote-to-cash, record-to-report, SaaS monetization, usage-based pricing, enterprise contracts, revenue reporting, onboarding architecture, payment platform strategy, AI monetization architecture, fractional VP of Product, fractional CPO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Surrey Street Partners — Commercial Architecture for B2B SaaS">
-<meta name="twitter:description" content="Pricing changes, billing migrations, quote-to-cash rebuilds. We embed with product and finance teams to ship the systems revenue depends on.">
+<meta name="twitter:description" content="Pricing changes, billing migrations, quote-to-cash rebuilds — and the monetization architecture AI products are going to need. We embed with product and finance teams to ship the systems revenue depends on.">
 <meta name="twitter:image" content="https://surreystreet.ai/logo/leopard_face.png">
 <link rel="canonical" href="https://surreystreet.ai/">
 <link rel="alternate" type="text/markdown" href="https://surreystreet.ai/index.md">
@@ -493,6 +493,15 @@ body {
   color: var(--dark-75);
 }
 
+/* ── Capabilities grid variant — 3 across. Process grid stays at 4. ── */
+.hww-grid.hww-grid--three { grid-template-columns: repeat(3, 1fr); }
+/* Restore borders the 4-col rules remove but a 3-col 6-cell layout needs: */
+.hww-grid.hww-grid--three .hww-cell:nth-child(4n) { border-right: 1px solid var(--dark-20); }
+.hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+4):not(:nth-last-child(-n+3)) { border-bottom: 1px solid var(--dark-20); }
+/* Right column (cells 3, 6) + bottom row (cells 4, 5, 6) — no outer border: */
+.hww-grid.hww-grid--three .hww-cell:nth-child(3n) { border-right: none; }
+.hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+3) { border-bottom: none; }
+
 /* ── Clients Strip ── */
 .clients-strip {
   padding: 60px 48px;
@@ -651,6 +660,16 @@ body {
   .hww-cell { border-right: 1px solid var(--dark-20); border-bottom: 1px solid var(--dark-20); }
   .hww-cell:nth-child(2n) { border-right: none; }
   .hww-cell:nth-last-child(-n+2) { border-bottom: none; }
+  /* 3-col variant collapses to 2-col at this breakpoint — re-apply 2-col border rules
+     with enough specificity to beat the modifier's :nth-child(3n) overrides above */
+  .hww-grid.hww-grid--three { grid-template-columns: repeat(2, 1fr); }
+  .hww-grid.hww-grid--three .hww-cell:nth-child(3n) { border-right: 1px solid var(--dark-20); }
+  .hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--dark-20); }
+  .hww-grid.hww-grid--three .hww-cell:nth-child(2n) { border-right: none; }
+  .hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+2) { border-bottom: none; }
+  /* Process-grid (4 cells) fix: the desktop :nth-last-child(-n+4) rule removes the
+     bottom border from ALL four process cells. Restore it on the top row. */
+  .hww-grid:not(.hww-grid--three) .hww-cell:nth-last-child(-n+4):not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--dark-20); }
   .how-we-work, .contact-section { padding: 60px 24px; }
   .statement { padding: 60px 24px; }
   .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
@@ -661,6 +680,15 @@ body {
   .hww-grid { grid-template-columns: 1fr; }
   .hww-cell { border-right: none; border-bottom: 1px solid var(--dark-20); }
   .hww-cell:last-child { border-bottom: none; }
+  /* 3-col variant collapses to 1-col; override the modifier's border rules */
+  .hww-grid.hww-grid--three { grid-template-columns: 1fr; }
+  .hww-grid.hww-grid--three .hww-cell:nth-child(3n),
+  .hww-grid.hww-grid--three .hww-cell:nth-child(4n) { border-right: none; }
+  .hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+3),
+  .hww-grid.hww-grid--three .hww-cell:nth-last-child(-n+4):not(:nth-last-child(-n+3)) { border-bottom: 1px solid var(--dark-20); }
+  .hww-grid.hww-grid--three .hww-cell:last-child { border-bottom: none; }
+  /* Process-grid (4 cells) fix: restore bottom borders on cells 1-3 at mobile */
+  .hww-grid:not(.hww-grid--three) .hww-cell:nth-last-child(-n+4):not(:last-child) { border-bottom: 1px solid var(--dark-20); }
 }
 </style>
 </head>
@@ -693,7 +721,7 @@ body {
   <div class="hero-right">
     <div class="hero-eyebrow">We Build What Others Advise On</div>
     <h1 class="hero-headline">COMMERCIAL<br>ARCHITECTURE<br>FOR B2B SAAS</h1>
-    <p class="hero-sub">Pricing changes, billing migrations, quote-to-cash rebuilds — we embed with product and finance teams to ship the systems revenue depends on. Not decks. Working software.</p>
+    <p class="hero-sub">Pricing changes, billing migrations, quote-to-cash rebuilds — and the monetization architecture AI products are going to need. We embed with product and finance teams to ship the systems revenue depends on. Not decks. Working software.</p>
     <a href="#contact" class="hero-cta">Get in touch</a>
   </div>
 </section>
@@ -771,37 +799,41 @@ body {
       <div class="hww-cell-title">Validate</div>
       <div class="hww-cell-text">Every deliverable is tested against real users and real data. We don't hand off until it works — and you can prove it works.</div>
     </div>
+  </div>
+</section>
+
+<!-- ── Capabilities ── -->
+<section class="how-we-work" id="capabilities">
+  <div class="hww-header">
+    <div>
+      <div class="hww-eyebrow">What We Do</div>
+      <h2 class="hww-headline">SIX PRACTICES</h2>
+    </div>
+  </div>
+  <div class="hww-grid hww-grid--three">
+    <div class="hww-cell">
+      <div class="hww-cell-title">Monetization &amp; Pricing</div>
+      <div class="hww-cell-text">B2B pricing strategy, usage-based billing, packaging design, quote-to-cash, and revenue architecture for technical platforms.</div>
+    </div>
+    <div class="hww-cell">
+      <div class="hww-cell-title">Marketplaces &amp; Partner Ecosystems</div>
+      <div class="hww-cell-text">App and reseller marketplaces for B2B platforms — third-party app ecosystems, channel and partner pricing, revenue share and payout models, and entitlements across the ecosystem.</div>
+    </div>
     <div class="hww-cell">
       <div class="hww-cell-title">Payments &amp; Commerce</div>
-      <div class="hww-cell-text">Authorization models, headless commerce, multi-party transactions, vault architecture, and SMS payments infrastructure.</div>
+      <div class="hww-cell-text">Authorization models, headless commerce, multi-party transactions, and vault architecture.</div>
     </div>
     <div class="hww-cell">
-      <div class="hww-cell-title">Open Banking &amp; Data</div>
-      <div class="hww-cell-text">Financial data API platforms, CFPB 1033 compliance, consumer-permissioned data, and fintech partnerships.</div>
+      <div class="hww-cell-title">Open Banking &amp; Capital Markets</div>
+      <div class="hww-cell-text">Financial data APIs, CFPB 1033, consumer-permissioned data, derivatives and market data infrastructure.</div>
     </div>
     <div class="hww-cell">
-      <div class="hww-cell-title">Capital Markets</div>
-      <div class="hww-cell-text">Derivatives and futures trading platforms, market data systems, and institutional product strategy.</div>
-    </div>
-    <div class="hww-cell">
-      <div class="hww-cell-title">AI Product Strategy</div>
-      <div class="hww-cell-text">Production agentic workflows, ML-driven personalization, alternative data, and AI-native product strategy.</div>
-    </div>
-    <div class="hww-cell">
-      <div class="hww-cell-title">Monetization</div>
-      <div class="hww-cell-text">B2B pricing strategy, usage-based billing, packaging design, and revenue architecture for technical platforms.</div>
+      <div class="hww-cell-title">AI &amp; Agentic Systems</div>
+      <div class="hww-cell-text">Production agentic workflows, delegated authority and scoped permissions, AI monetization architecture.</div>
     </div>
     <div class="hww-cell">
       <div class="hww-cell-title">Developer Platforms</div>
-      <div class="hww-cell-text">Developer experience, SDKs, API design, documentation systems, and PLG-to-enterprise commercial transitions.</div>
-    </div>
-    <div class="hww-cell">
-      <div class="hww-cell-title">Workflow Digitization</div>
-      <div class="hww-cell-text">Software eating offline industries — real estate, lending, last-mile operations — where the operational complexity is the product.</div>
-    </div>
-    <div class="hww-cell">
-      <div class="hww-cell-title">Communications</div>
-      <div class="hww-cell-text">CPaaS architecture on Twilio and RCS. SMS, in-app messaging, and multi-channel notification infrastructure.</div>
+      <div class="hww-cell-text">Developer experience, SDKs, API design, and the PLG-to-enterprise commercial transition.</div>
     </div>
   </div>
 </section>
